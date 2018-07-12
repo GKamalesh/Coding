@@ -1,0 +1,52 @@
+/*
+Vertical ZigZag - C Columns
+Accept two integers as the input. The program must print the vertical zigzag pattern as given in the Example Input/Output
+Section.
+Boundary Condition(s):
+2 <= R, C <= 50
+Input Format:
+The first line contains the value of R and C separated by space(s).
+Output Format:
+The first R lines contain the vertical zigzag pattern.
+Example Input/Output 1:
+Input:
+5 5
+Output:
+1 10 11 20 21
+2 9 12 19 22
+3 8 13 18 23
+4 7 14 17 24
+
+*/#include<stdio.h>
+#include <stdlib.h>
+int main()
+{
+int a[1000][1000],i,j,k=1,row,col;
+scanf("%d %d",&row,&col);
+for(j=1;j<=col;j++)
+{
+for(i=1;i<=row;i++)
+{
+    if(j%2==0)
+    {
+    k--;
+    }
+    a[i][j]=k;
+    //printf("%da",k);
+    if(j%2!=0)
+    {
+    k++;
+    }
+}
+k=k+row;
+}
+for(i=1;i<=row;i++)
+{
+    for(j=1;j<=col;j++)
+    {
+        printf("%d ",a[i][j]);
+    }
+    printf("\n");
+}
+
+}
