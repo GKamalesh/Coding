@@ -29,7 +29,62 @@ Output:
 
 
 */
+/*#include<stdio.h>
+#include <stdlib.h>
+int main()
+{
+int i,j,n,a,c=2,s;
+scanf("%d",&n);
+if(n%2==0)
+{
+    a=((n/2)+1);
+    s=0;
+}
+else
+{
+    a=(n+1)/2;
+    s=1;
+}
+for(i=1;i<=n;i++)
+{
+    for(j=1;j<=n;j++)
+    {
+        if(i==1)
+        {
+            if(j==n)
+                printf("%d",j);
+            else
+               printf("%d*",j);
+        }
+        else if(i<=a)
+        {
+            if(j==n)
+        printf("%d",((c*n)+j));
+        else
+        printf("%d*",((c*n)+j));
+        }
+        else
+        {
+            if(j==n)
+            printf("%d",((c*n)+j));
+            else
+            printf("%d*",((c*n)+j));
+            s=0;
+        }
+    }
+    if((i<(a-1)) && (i!=1))
+    c=c+2;
+    else if((i==(a-1)) && (n%2!=0) && (i!=1))
+    c=c+2;
+    else if((i==(a-1)) && (n%2==0))
+    c=c+1;
+    else if(i>(a-1))
+    c=c+s-2;
+    printf("\n");
+}
+}
 
+*/
 #include <iostream>
  
 using namespace std;
