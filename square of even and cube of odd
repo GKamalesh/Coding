@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include<math.h>
+int main()
+{
+    int n,i,c,a[1000];
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+        if(a[i]%2==0)
+        {
+            c=pow(a[i],2);
+        printf("%d ",c);
+        }
+        else
+        {
+            c=pow(a[i],3);
+            printf("%d ",c);
+        }
+    }
+    return 0;
+}
