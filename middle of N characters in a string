@@ -1,0 +1,17 @@
+#include <stdio.h>
+int main()
+{
+    int i,j,n,x,b,m;
+    char a[1000];
+    scanf("%s",a);
+    scanf("%d",&n);
+    m=strlen(a);
+    x=m-n;
+    if((n%2==0 && m%2==0) || (n%2!=0 && m%2!=0))
+    b=x/2;
+    else
+    b=x/2+1;
+    for(i=b;i<b+n;i++)
+    printf("%c",a[i]);
+    return 0;
+}
