@@ -40,3 +40,39 @@ elif x>5:
     print(int(x*y-x*y/2))
 else:
     print(x*y)
+
+
+
+#include<stdio.h>
+#include <stdlib.h>
+int main()
+{
+    int x,y;
+    scanf("%d%d",&x,&y);
+    if(x>=2 && x<=4)
+    printf("%d",x*y-x*y/10);
+    else if(x==5)
+    printf("%d",x*y-x*y/5);
+    else if(x>5)
+    printf("%d",x*y-x*y/2);
+    else
+    printf("%d",x*y);
+}
+
+
+
+#include <iostream>
+using namespace std;
+int main(int argc, char** argv)
+{
+    int x,y;
+    cin>>x>>y;
+    if(x<=4 && x>=2)
+    cout<<x*y-x*y/10;
+    else if(x==5)
+    cout<<x*y-x*y/5;
+    else if(x>5)
+    cout<<x*y-x*y/2;
+    else
+    cout<<x*y;
+}
