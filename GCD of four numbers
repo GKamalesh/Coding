@@ -1,0 +1,39 @@
+#include<stdio.h>
+int main()
+{
+    int n1,n2,n3,n4,a,b,c,s,i;
+    scanf("%d%d%d%d",&n1,&n2,&n3,&n4);
+if(n1>n2)
+s=n1;
+else
+s=n2;
+for(i=1;i<=s;i++)
+{
+    if(n1%i==0 && n2%i==0)
+    a=i;
+}
+if(n3>n4)
+s=n3;
+else
+s=n4;
+for(i=1;i<=s;i++)
+{
+    if(n3%i==0 && n4%i==0)
+    b=i;
+}
+printf("%d",gcd(a,b));
+    return 0;
+}
+int gcd(a,b)
+{int s,c,i;
+if(a>b)
+s=a;
+else
+s=b;
+for(i=1;i<=s;i++)
+{
+    if(a%i==0 && b%i==0)
+    c=i;
+}
+return c;
+}
