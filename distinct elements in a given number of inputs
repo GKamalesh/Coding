@@ -1,0 +1,45 @@
+You are given a sorted (either in the increasing or in the decreasing order) sequence of numbers, ending with a -1. You can assume that are at least two numbers before the ending -1. 
+
+Let us call the sequence x0 x1 ... xn -1.
+
+You have to output the number of distinct elements in the sorted sequence.
+
+Kindly do not use arrays in the code. 
+
+Sample Test Cases
+Input	Output
+Test Case 1	
+4 5 6 7 -1
+4
+Test Case 2	
+5 4 4 3 -1
+3
+Test Case 3	
+1 2 -1
+2
+Test Case 4	
+12 33  87 87 87 87 87  94 112 120 -1
+6
+Test Case 5	
+1 2 2 -1
+2
+
+
+
+#include<stdio.h>
+void main()
+{
+  int k,a[100],p=0;
+  scanf("%d",&k);
+  while(!(k==-1))
+  {
+    int f=0;
+    for(int i=0;i<p;i++)
+      if(a[i]==k){
+      f=1;break;}
+    if(f==0)
+      a[p++]=k;
+    scanf("%d",&k);
+  }
+  printf("%d\n",p);
+}
