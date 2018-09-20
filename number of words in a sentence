@@ -1,0 +1,70 @@
+A line of English text will be given, where words are separated by one
+of the following symbols:
+
+ ' ', '\t', '.', ',' and ';'
+
+Each word may be separated from the next and the previous by one or
+more of the following symbols. You have to count the number of words
+in the sentence.
+
+Note that to read the input, you have to read until the EOF symbol is
+read, as in the following example.
+
+int main()
+{
+    int c;
+   
+    c = getchar();
+    while ( c != EOF ) {
+       c = getchar();
+    }
+    return 0;
+}
+
+Note: it is possible to solve this question without arrays, so the
+maximum length of the line is not important.
+
+Input
+-----
+A line of English text with words separated from one another by one or
+more occurrences of the symbols
+
+ ' ', '\t', '.', ',' and ';'
+
+Output
+------
+The number of words in the line.
+
+Sample Input
+------------
+This is a sentence, it has words separated by spaces and fullstops.
+
+Sample Output
+-------------
+12
+Sample Test Cases
+Input	Output
+Test Case 1	
+this is a line.
+4
+Test Case 2	
+This is    another    line.
+4
+
+
+
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+ char a[1000];
+ int i,j=0,l=0;
+  scanf("%[^'\n']s",a);
+ for(i=0;i<=strlen(a);i++)
+ {
+ if((a[i]==' ' || a[i]=='\0' || a[i]=='\t' || a[i]==',' || a[i]=='.' || a[i]==';') && (a[i-1]!=' ' && a[i-1]!='\0' && a[i-1]!='\t' && a[i-1]!=',' && a[i-1]!='.' && a[i-1]!=';'))
+ l+=1;
+ }
+ printf("%d",l);
+ return 0;
+}
