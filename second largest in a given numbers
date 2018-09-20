@@ -1,0 +1,59 @@
+You are given a sequence of integers as input, terminated by a
+-1. (That is, the input integers may be positive, negative or 0. A -1
+in the input signals the end of the input.) 
+
+-1 is not considered as part of the input.  
+
+Find the second largest number in the input. You may not use arrays.
+
+Sample Test Cases
+Input	Output
+Test Case 1	
+-840 -288 -261 -337 -335 488 -1
+-261
+Test Case 2	
+-840 -335 -1
+-840
+Test Case 3	
+471 -288 -366 488 -335 -420 -840 465 -337 413 -261 458 -1
+471
+Test Case 4	
+-588 -93 -288 512 -513 168 -146 -366 -335 180 -49 -266 -840 129 423 458 64 488 32 475 -295 413 193 471 -586 -337 133 -488 394 -420 465 -128 497 -261 55 615 -40 -888 -507 -1
+512
+Test Case 5	
+-146 -288 -266 133 -840 423 -93 64 -335 -513 -366 471 413 488 -420 497 475 -507 129 -615 465 -295 55 -261 -128 593 180 -40 512 458 -488 193 168 -586 -49 -337 32 -888 -588 -1
+512
+
+
+
+#include<stdio.h>
+void main()
+{
+  int m1,m2,num,i=0;
+  scanf("%d",&num);
+  while(!(num==-1))
+  {
+    
+   if(i==0)
+     {
+          m1 = num;
+          m2 = num;
+     }
+     else 
+     {
+         
+     if(num>m1)
+     {
+          m2 = m1; 
+          m1 = num; 
+     }
+     else if(num>m2)
+     {
+          m2=num;
+     }
+     }
+    i++;
+     scanf("%d",&num);
+  }
+  printf("%d",m2);
+}
