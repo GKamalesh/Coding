@@ -1,0 +1,131 @@
+Level: Medium
+
+In this assignment, you will be given an NxN matrix. You have to
+determine whether the matrix is a triangular matrix. 
+
+The diagonal of the matrix M of size NxN is the set of entries M(0,0),
+M(1,1), M(2,2), ..., M(N,N). 
+
+A matrix is upper triangular if every entry below the diagonal is
+0. For example,  
+1 1 1
+0 0 1
+0 0 2
+is an upper triangular matrix. (The diagonal itself, and the entries
+above and below the diagonals can be zeroes or non-zero integers.) 
+
+A matrix is lower triangular if every entry above the diagonal is
+0. For example, 
+2 0 0
+3 1 0
+4 2 2
+is a lower triangular matrix. 
+
+A matrix is triangular if it is either upper triangular or lower
+triangular or both.  
+
+You may not use arrays for this program.
+
+Input
+First, you will be given N, which is the size of the matrix.
+
+Then you will be given N rows of integers, where each row consists of
+N integers separated by spaces. 
+
+Output
+If the input matrix is triangular, then print yes. Otherwise, print
+no. 
+
+Sample Test Cases
+Input	Output
+Test Case 1	
+2
+1 1
+0 1
+yes
+Test Case 2	
+3
+1 0 0
+0 1 0
+1 1 2
+yes
+Test Case 3	
+3
+1 0 0
+0 1 0
+1 1 2
+yes
+Test Case 4	
+7
+1 0 0 0 0 0 0
+0 1 0 0 0 0 0
+0 0 1 0 0 0 0
+0 0 0 1 0 0 0
+0 0 0 0 1 0 0
+0 0 0 0 0 1 0
+0 0 0 0 0 0 1
+yes
+Test Case 5	
+7
+1 0 0 0 0 0 0
+0 1 0 0 0 0 0
+0 0 1 0 0 0 0
+0 0 0 1 0 0 0
+0 0 0 0 1 0 0
+0 0 0 0 0 1 1
+0 0 0 0 0 0 0
+yes
+Test Case 6	
+7
+1 0 0 0 0 0 0
+0 1 0 0 0 0 0
+0 0 1 0 0 0 0
+0 0 0 1 0 0 0
+0 0 0 0 1 0 0
+0 0 0 0 0 1 1
+0 0 0 0 0 1 1
+no
+
+
+
+
+
+#include<stdio.h>
+void main()
+{
+  int n;
+  scanf("%d",&n);
+  int a[n][n];
+  int i,j;
+  for(i=0;i<n;i++)
+    for(j=0;j<n;j++)
+    scanf("%d",&a[i][j]);
+  int t=0,f=0;
+  for(i=0;i<n;i++)
+  {
+    for(j=0;j<n;j++)
+    {
+    if(i!=j&&j>i)
+  {
+    if(a[i][j]!=0)
+    {
+      f=1;
+      break;
+    }
+  }
+      if(i!=j&&j<i)
+      {
+        if(a[i][j]!=0)
+        {
+          t=1;
+          break;
+        }
+      }
+    }
+  }
+  if(f==0||t==0)
+    printf("yes");
+  else 
+    printf("no");
+    
+}
