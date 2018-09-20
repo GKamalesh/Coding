@@ -1,0 +1,48 @@
+Write a C program to list all the factorial numbers less than or equal
+to an input number n.
+
+A number N is called a factorial number if it is the factorial of a
+positive integer. For example, the first few factorial numbers are
+
+   1, 2, 6, 24, 120, ...
+
+*Note* - We do not list the factorial of 0.
+
+Input
+-----
+A positive integer, say n.
+
+Output
+------
+All factorial numbers less than or equal to n.
+Sample Test Cases
+Input	Output
+Test Case 1	
+4
+1 2
+Test Case 2	
+5
+1 2
+Test Case 3	
+30
+1 2 6 24
+
+
+
+#include<stdio.h>
+int main()
+{
+  long long int i,n,f=1,a[1000000],j=0;
+  scanf("%lld",&n);
+for(i=1;i<=n;i++)
+{
+ f=f*i;
+  if(f<=n && f>0)
+  {
+    a[j]=f;
+    j++;
+  }
+}
+for(i=0;i<j;i++)
+printf("%lld ",a[i]);
+}
