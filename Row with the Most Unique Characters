@@ -1,0 +1,103 @@
+Row with the Most Unique Characters
+The program must accept a character matrix of size NxN as the input. The program must print the position of the row which contains the most
+number of unique characters as the output.
+Note: If more than one row contains the most number of unique characters then print the  position of the last occurring row with the most
+number of unique characters.
+Boundary Condition(s):
+1 <= N <= 50
+Input Format:
+The first line contains the integer value of N.
+The next N lines contain N characters each separated by a space.
+Output Format:
+The first line contains the position of the row with the most number of unique characters.
+Example Input/Output 1:
+Input:
+5
+a r g t e
+e r t e w
+o p p i o
+l p k o k
+q w e e w
+Output:
+1
+Explanation:
+The first row contains 5 unique characters.
+The second row contains 3 unique characters.
+The third row contains 3 unique characters.
+The fourth row contains 3 unique characters.
+The fifth row contains 1 unique character.
+The first row contains the most number of unique characters.
+Hence 1 is printed as the output
+Example Input/Output 2:
+3
+& d f
+a * c
+@ d #
+Output:
+3
+Explanation:
+The first row contains 3 unique characters.
+The second row also contains 3 unique characters.
+The third row also contains 3 unique characters.
+The third row is the last row with the most number of unique characters.
+Hence 3 is printed as the output
+
+
+
+#include<stdio.h>
+#include <stdlib.h>
+int main()
+{
+    int n,i,j,c,f=0,k,l=0,d[1000],e;
+    scanf("%d",&n);
+    scanf("\n");
+    char a[1000][1000],b[1000];
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<n;j++)
+        scanf("%c ",&a[i][j]);
+    }
+    for(i=0;i<n;i++)
+    {
+        c=0;
+        e=1;
+        for(j=0;j<n;j++)
+        {
+            if(j==0)
+            {
+            b[0]=a[i][j];
+            c=1;
+            }
+            else
+            {
+                b[e]=a[i][j];
+                f=1;
+            for(k=0;k<e;k++)
+            {
+                if(a[i][j]==b[k])
+                {
+                c-=1;
+                f=0;
+                break;
+                }
+            }
+            e++;
+            if(f==1)
+            c++;
+            }
+        }
+        d[l]=c;
+        l++;
+    }
+    c=d[0];
+    e=0;
+    for(i=1;i<l;i++)
+    {
+    if(d[i]>=c)
+    {
+    c=d[i];
+    e=i;
+    }
+    }
+    printf("%d",e+1);
+}
