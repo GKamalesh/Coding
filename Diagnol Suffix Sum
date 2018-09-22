@@ -1,0 +1,114 @@
+Diagnol Suffix Sum
+The program must accept an integer matrix of size NxN as input. The program must print the sum of all the suffixes of the diagonal.
+Boundary Condition(s):
+2 <= N <= 50
+Input Format:
+The first line contains the value of N.
+The next N lines contain N integers each separated by space(s).
+Output Format:
+The first two lines contain N integers each separated by a space.
+Example Input/Output 1:
+Input:
+3
+5 1 6
+4 2 9
+8 7 3
+Output:
+16 10 8
+10 5 3
+Explanation:
+The main diagonal sum -> 5+2+3 -> 10
+The first suffix sum of the main diagonal -> 2+3 -> 5
+The second suffix sum of the main diagonal -> 3
+Total -> 10+5+3 -> 18
+The opposite diagonal sum -> 6+2+8 -> 16
+The first suffix sum of the opposite diagonal-> 2+8 -> 10
+The second suffix sum of the opposite diagonal -> 8
+Total -> 16+10+8 ->34
+Since 34 > 18 the opposite diagonal sum and their suffixes sum are printed in the first line and the main diagonal sum and their suffixes sum are
+printed in the second line
+Example Input/Output 2:
+Input:
+4
+54 86 35 71
+78 32 85 62
+69 84 66 45
+37 79 73 30
+Output:
+277 206 121 37
+182 128 96 30
+
+
+#include<stdio.h>
+#include <stdlib.h>
+int main()
+{
+    int n,i,j,a[100][100],b[1000],c=0,s=0,h=0,d[1000],f[1000],l=1,e[1000],k=0;
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<n;j++)
+        scanf("%d",&a[i][j]);
+    }
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<n;j++)
+        {
+            if(i==j)
+            {
+               b[c]=a[i][j];
+               s=s+a[i][j];
+               c++;
+               e[0]=s;
+            }
+            if(j==n-i-1)
+            {
+                d[k]=a[i][j];
+                //printf("%d ",d[k]);
+                h+=a[i][j];
+                k++;
+                f[0]=h;
+            }
+        }
+    }
+    while(l<c)
+    {
+    for(i=l;i<c;i++)
+    {
+       e[l]=e[l]+b[i]; 
+    }
+    l++;
+    }
+    l=1;
+    while(l<k)
+    {
+        for(i=l;i<k;i++)
+        {
+            f[l]=f[l]+d[i];
+        }
+        l++;
+    }
+    s=0;
+    h=0;
+    for(i=0;i<c;i++)
+    {
+        s=s+e[i];
+        h=h+f[i];
+    }
+    if(s>h)
+    {
+        for(i=0;i<k;i++)
+        printf("%d ",e[i]);
+        printf("\n");
+        for(i=0;i<k;i++)
+        printf("%d ",f[i]);
+    }
+    else
+    {
+        for(i=0;i<k;i++)
+        printf("%d ",f[i]);
+        printf("\n");
+        for(i=0;i<k;i++)
+        printf("%d ",e[i]);
+    }
+}
