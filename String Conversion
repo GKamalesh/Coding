@@ -1,0 +1,57 @@
+String Conversion
+The program must accept two string values S1 and S2 (S2 in uppercase only) as input. The program must print YES if it is possible to convert S1
+to S2. Else the program must print NO as the output.
+Note:
+Uppercase alphabets must not be removed in S1.
+Convert the needed lowercase alphabets into uppercase alphabets and remove the remaining lowercase alphabets in S1.
+Boundary Condition(s):
+3 <= Length of S1 <= 100
+1 <= Length of S2 <= 50
+Input Format:
+The first line contains the values of string S1 and S2 separated by a space.
+Output Format:
+The first line contains either YES or NO.
+Example Input/Output 1:
+Input:
+aBcd ABC
+Output:
+YES
+Example Input/Output 2:
+Input:
+mAno MON
+Output:
+NO
+Explanation:
+In string S1, m n o can be converted into uppercase. But A is an uppercase alphabet in S1 that cannot be removed. So, the string S1 can be
+converted as MOAN which is not equal to S2. Hence, NO is printed as the output.
+
+
+
+#include<stdio.h>
+#include <stdlib.h>
+#include<string.h>
+int main()
+{
+int n,i,j,m,t,f=0;
+char a[1000],b[1000];
+scanf("%s ",a);
+scanf("%s",b);
+n=strlen(a);
+m=strlen(b);
+if(n>m)
+t=m;
+else
+t=n;
+for(i=0;i<t;i++)
+{
+    if(a[i]!=b[i] && a[i]!=toupper(b[i]) && a[i]!=tolower(b[i]))
+    {
+    f=1;
+    break;
+    }
+}
+if(f==1)
+printf("NO");
+else
+printf("YES");
+}
