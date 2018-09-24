@@ -60,3 +60,23 @@ int main(int argc, char** argv)
     }
     cout<<s;
 }
+
+
+
+a=list(map(int,input().split()))
+m=a[0]
+n=a[1]
+s=0
+b=m//2
+c=n//2
+d=[]
+l=[]
+if m%2!=0:b+=1
+if n%2!=0:c+=1
+for i in range(m):
+    l.append(list(map(int,input().split())))
+    d.append(l[i])
+    for j in range(n):
+        if i<b and j<c:
+            s+=d[i][j]
+print(s)
