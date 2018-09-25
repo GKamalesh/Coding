@@ -29,6 +29,27 @@ Output:
 
 
 
+#include<stdio.h>
+#include <stdlib.h>
+int main()
+{
+    int n,i,j,k;
+    scanf("%d",&n);
+    printf("0\n");
+    while(i<n)
+    {
+    for(j=n-i;j<=n;j++)
+    printf("%d",j);
+    printf("0");
+    for(k=n;k>=n-i;k--)
+    printf("%d",k);
+    printf("\n");
+    i++;
+    }
+return 0;
+}
+
+
 #include <iostream>
 using namespace std;
 int main(int argc, char** argv)
