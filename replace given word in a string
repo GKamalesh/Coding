@@ -1,0 +1,49 @@
+Write a program that replaces the occurence of a given character (say c)
+in a primary string (say PS) with another string (say s).
+
+Input:
+The first line contains the primary string (PS)
+The next line contains a character (c)
+The next line contains a string (s)
+
+Output:
+Print the string PS with every occurence of c replaced by s.
+
+NOTE:
+- There are no whitespaces in PS or s. 
+- Maximum length of PS is 100.
+- Maximum length of s is 10.
+
+Sample Test Cases
+Input	Output
+Test Case 1	
+abcxy
+b
+mf
+amfcxy
+Test Case 2	
+Al@bal#20owL
+l
+LL
+ALL@baLL#20owL	
+
+
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+  char a[1000],b[100],c[100];
+  int i,n;
+  scanf("%s",a);
+  scanf("%s",b);
+  scanf("%s",c);
+  n=strlen(a);
+  for(i=0;i<n;i++)
+  {
+    if(a[i]==b[0])
+      printf("%s",c);
+    else
+      printf("%c",a[i]);
+  }
+    return 0;
+  }
