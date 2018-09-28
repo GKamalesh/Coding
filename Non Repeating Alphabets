@@ -1,0 +1,61 @@
+Non Repeating Alphabets
+The program must accept a string S as the input. The program must print only the alphabets which are not repeated in the string S as the output.
+If all the alphabets are repeated then the program must print -1 as the output.
+Note: The alphabets are only in lower case.
+Boundary Condition(s):
+1 <= Length of S <= 100
+Example Input/Output 1:
+Input:
+eagle
+Output:
+agl
+Explanation:
+The alphabet 'e' is repeated two times in the string.
+The alphabet 'a', 'g' and 'l' are not repeated in the string.
+Hence agl is printed as the output.
+Example Input/Output 2:
+Input:
+management
+Output:
+gt
+
+
+
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+int main()
+{
+    char a[1000],b[1000],c[1000];
+    scanf("%s",a);  
+    int n,i,j,t,k=0;    
+    n=strlen(a);
+    strcpy(b,a);    
+    for(i=0;i<n;i++)    
+    {
+        t=0;    
+        for(j=0;j<n;j++)
+        {
+            if(a[i]==b[j] && i!=j)  
+            {                
+                t=1;        
+                break;
+            }
+        }
+        if(t==0)            
+        {
+            c[k]=a[i];      
+            k++;     
+        }
+    }
+    if(k==0)    
+    printf("-1");
+    else    
+    {
+        for(i=0;i<k;i++)
+        {
+            printf("%c",c[i]);   
+        }
+    }
+    return 0;
+}
