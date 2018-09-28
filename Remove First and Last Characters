@@ -1,0 +1,82 @@
+Remove First and Last Characters
+The program must accept N string values as the input. The program must print the string values without their first and last characters as the
+output.
+Boundary Condition(s):
+1 <= N <= 50
+3 <= Length of each string <= 100
+Input Format:
+The first line contains the integer value of N.
+The next N lines contain the string values.
+Output Format:
+The first N lines contain the string values without their first and last characters.
+Example Input/Output 1:
+Input:
+3
+apple
+mango
+orange
+Output:
+ppl
+ang
+rang
+Explanation:
+The first and last characters of apple are a and e. So a and e are removed. Hence ppl is printed.
+The first and last characters of mango are m and o. So m and o are removed. Hence ang is printed.
+The first and last characters of orange are o and e. So o and e are removed. Hence rang is printed.
+Example Input/Output 2:
+Input:
+2
+PROGRAM
+!@#$%^&*(
+Output:
+ROGRA
+@#$%^&*
+
+
+
+
+
+n=int(input())
+for i in range(n):
+    a=input().strip()
+    print(a[1:-1])
+
+
+
+import java.util.*;
+public class Hello {
+
+    public static void main(String[] args) {
+		int i,j,t;
+		Scanner s=new Scanner(System.in);
+		int n=s.nextInt();
+		for(i=0;i<n;i++)
+		{
+		    String a=s.next();
+		    t=a.length();
+		    for(j=1;j<t-1;j++)
+		    System.out.print(a.charAt(j));
+		    System.out.println("\n");
+		}
+	}
+}
+
+
+
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+int main()
+{
+    int n,i,j;
+    char a[1000];
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+    scanf("%s",a);
+    for(j=1;j<strlen(a)-1;j++)
+    printf("%c",a[j]);
+    printf("\n");
+    }
+    return 0;
+}
