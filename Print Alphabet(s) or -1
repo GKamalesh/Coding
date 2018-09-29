@@ -1,0 +1,48 @@
+Print Alphabet(s) or -1
+The program must accept a string S as the input. The program must calculate the count of vowels in S as C (the count of vowels in S is always
+less than 27) and print the C alphabets in lower case in alphabetic order as the output. If there is no vowel in S, then the program must print -1
+as the output.
+Boundary Condition(s):
+1 <= Length of String S <= 100
+0 <= C <= 26
+Example Input/Output 1:
+Input:
+apple
+Output:
+ab
+Example Input/Output 2:
+Input:
+ENVIRONMENT
+Output:
+abcd
+Example Input/Output 3:
+Input:
+XYZ
+Output:
+-1
+
+
+
+
+#include<stdio.h>
+#include <stdlib.h>
+#include<string.h>
+int main()
+{
+    int n,i,c=0;
+    char a[1000],j;
+    scanf("%s",a);
+n=strlen(a);
+for(i=0;i<n;i++)
+{
+  if(a[i]=='a' || a[i]=='A' || a[i]=='e' || a[i]=='E' || a[i]=='i' || a[i]=='I' || a[i]=='O' || a[i]=='o' || a[i]=='u' || a[i]=='U')  
+  c++;
+}
+if(c==0)
+printf("-1");
+else
+{
+    for(j='a';j<'a'+c;j++)
+    printf("%c",j);
+}
+}
