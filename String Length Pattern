@@ -1,0 +1,100 @@
+String Length Pattern
+The program must accept two string values S1 and S2. The program must print the pattern as shown in the Example Input/Output sections.
+Boundary Condition(s):
+1 <= Length of S1, S2 <= 100
+Example Input/Output 1:
+Input:
+bad water
+Output:
+bw
+aa
+dt
+*e
+*r
+Example Input/Output 2:
+Input:
+gionee kkr
+Output:
+gk
+ik
+or
+n*
+e*
+e*
+
+
+
+a,b=map(str,input().split())
+m=len(a)
+n=len(b)
+if(m>=n):
+    s=m
+else:
+    s=n
+for i in range(s):
+    if i<m:
+        print(a[i],end='')
+    else:
+        print("*",end='')
+    if i<n:
+        print(b[i])
+    else:
+        print("*")
+
+
+
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+int main()
+{
+    char x[1000],y[1000];
+    int i,m,n,c;
+    scanf("%s%s",x,y);
+    m=strlen(x);
+    n=strlen(y);
+    if(m>=n)
+    c=m;
+    else
+    c=n;
+    for(i=0;i<c;i++)
+    {
+        if(i<m)
+        printf("%c",x[i]);
+        else
+        printf("*");
+        if(i<n)
+        printf("%c\n",y[i]);
+        else
+        printf("*\n");
+    }
+return 0;
+}
+
+
+
+import java.util.*;
+public class Hello {
+    public static void main(String[] args) {
+		int i,n,m,c;
+		Scanner s=new Scanner(System.in);
+		String[] a=s.nextLine().split(" ");
+		m=a[0].length();
+		n=a[1].length();
+		if(m>=n)
+		c=m;
+		else
+		c=n;
+		for(i=0;i<c;i++)
+		{
+		    if(i<m)
+		    System.out.print(a[0].charAt(i));
+		    else
+		    System.out.print("*");
+		    if(i<n)
+		    System.out.println(a[1].charAt(i));
+		    else
+		    System.out.println("*");
+		}
+	}
+}
