@@ -1,0 +1,49 @@
+String N Column Pattern
+The program must accept a string S and an integer N as the input. The program must print the string as shown in the Example Input/Output
+section as the output.
+Boundary Condition(s):
+1 <= Length of S <= 100
+1 <= N <= Length of S
+Example Input/Output 1:
+Input:
+apple 2
+Output:
+ap
+pl
+e
+Explanation:
+At the first line, the first 2 characters of S are ap. So, ap is printed.
+At the second line, the next 2 characters of S are pl. So pl is printed.
+At the third line, there is only one character in S, so e is printed
+Example Input/Output 2:
+Input:
+environment 5
+Output:
+envir
+onmen
+t
+
+
+
+
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+int main()
+{
+    int i=0,j,n,m;
+    char a[1000];
+    scanf("%s",a);
+    scanf("%d",&m);
+    n=strlen(a);
+    while(i<n)
+    {
+      for(j=i;j<i+m;j++)
+      {
+          if(j<n)
+          printf("%c",a[j]);
+      }
+      i+=m;
+     printf("\n");
+    }
+}
