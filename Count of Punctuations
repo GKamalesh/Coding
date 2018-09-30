@@ -1,0 +1,90 @@
+Count of Punctuations
+The program must accept a string S as the input. The program must print the count of punctuations in S as the output.
+Note: Punctuation characters are , . ? ! ' " : ; ... -.
+Hint: Use ispunct() function.
+   
+Boundary Condition(s):
+5 <= Length of String S <= 99
+Example Input/Output 1:
+Input:
+Hello everyone, how are you?
+Output:
+2
+Example Input/Output 2:
+Input:
+listen here.
+Output:
+1
+
+
+
+import string
+a=input()
+d=0
+b=list(string.ascii_lowercase)
+c=list(string.ascii_uppercase)
+for i in range(len(a)):
+    t=0
+    for j in range(26):
+        if a[i]==b[j] or a[i]==c[j] or a[i]==' ':
+            t=1
+            break
+    if t==0:
+        d+=1
+print(d)
+
+
+
+import java.util.*;
+public class Hello {
+    public static void main(String[] args) {
+	Scanner s=new Scanner(System.in);
+	String a=s.nextLine();
+	int i,t,c=0;
+	char j,k;
+	for(i=0;i<a.length();i++)
+	{
+	    t=0;
+	    for(j='a';j<='z';j++)
+	    {
+	        k=Character.toUpperCase(j);
+	        if(a.charAt(i)==j || a.charAt(i)==' ' || a.charAt(i)==k)
+	        {
+	            t=1;
+	            break;
+	        }
+	    }
+	    if(t==0)
+	    c++;
+	}
+	System.out.println(c);
+	}
+}
+
+
+
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+int main()
+{
+    int i,c=0,t;
+    char a[1000],j,k;
+    scanf("%[^\n]s",a);
+    for(i=0;i<strlen(a);i++)
+    {
+        t=0;
+        for(j='a';j<='z';j++)
+        {
+            k=toupper(j);
+            if(a[i]==j || a[i]==k || a[i]==' ')
+            {
+                t=1;
+                break;
+            }
+        }
+        if(t==0)
+        c++;
+    }
+    printf("%d",c);
+}
