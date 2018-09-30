@@ -1,0 +1,36 @@
+Write a recursive program that inputs a line of characters from the user. The line may contain blanks. It outputs the line with the characters reversed. The input ends with EOF (end of file). 
+NOTE: You have to use recursion to solve this, and are NOT allowed to use array to store the input!! 
+
+Example: 
+INPUT 
+This is easy 
+
+OUTPUT 
+ysae si sihT
+
+Sample Test Cases
+Input	Output
+Test Case 1	
+This is easy
+ysae si sihT
+Test Case 2	
+TEST CASES
+SESAC TSET
+
+
+
+
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+   char a[1000],b[1000];
+   int i,n;
+   scanf("%[^\n]s",a);
+   n=strlen(a);
+   for(i=0;i<n;i++) 
+   b[i]=a[n-i-1];
+   b[i]='\0';
+   printf("%s",b);
+   return 0;
+}
