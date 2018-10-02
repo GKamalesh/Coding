@@ -1,0 +1,48 @@
+Name of the Department
+In a competition, students from only two departments participated. The program must accept a string S consisting of only lowercase letters e
+representing the students from ECE and c representing the students from CSE as the input. The program must print the name of the
+department based on the majority number of students participated as the output. If equal number of students from both the departments
+participated in it, then print ECE - CSE as the output.
+Boundary Condition(s):
+5 <= Length of String S <= 99
+Example Input/Output 1:
+Input:
+eeccceececeee
+Output:
+ECE
+Example Input/Output 2:
+Input:
+cccceeeece
+Output:
+ECE - CSE
+Example Input/Output 3:
+Input:
+ccecececcece
+Output:
+CSE
+
+
+
+
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+int main()
+{
+    char a[1000];
+    int i,c=0,e=0;
+    scanf("%s",a);
+    for(i=0;i<strlen(a);i++)
+    {
+        if(a[i]=='e')
+        e++;
+        if(a[i]=='c')
+        c++;
+    }
+    if(e>c)
+    printf("ECE");
+    else if(c>e)
+    printf("CSE");
+    else
+    printf("ECE - CSE");
+}
