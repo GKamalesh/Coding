@@ -1,0 +1,91 @@
+Even Integers in Descending Order
+The program must accept a positive integer array of size N as the input. The program must print the even integers in the array in descending
+order as the output.
+Note: Atleast one integer is even in the array.
+Boundary Condition(s):
+5 <= N <= 50
+Example Input/output 1:
+Input:
+5
+45 67 587 48 398
+Output:
+398 48
+Example Input/Output 2:
+Input:
+6
+82 374 785 983 2714 9098
+Output:
+9098 2714 374 82
+
+
+
+import java.util.*;
+public class Hello 
+{
+    public static void main(String[] args)
+    {
+        Scanner s=new Scanner(System.in);       
+        int i,t,j;
+        int n=s.nextInt(); 
+        int[] a=new int[1000];
+        for(i=0;i<n;i++)        
+        a[i]=s.nextInt();
+        for(i=0;i<n;i++)
+        {
+            for(j=i+1;j<n;j++)  
+            {
+                if(a[i]<a[j])
+                {   
+                    t=a[i];     
+                    a[i]=a[j];      
+                    a[j]=t;
+                }
+            }
+        }
+        for(i=0;i<n;i++)
+        {
+            if(a[i]%2==0)
+        System.out.println(a[i]);
+        }
+    }
+}
+
+
+
+n=int(input())
+a=list(map(int,input().split(" ")))
+a.sort(reverse=True)
+for i in range(n):
+    if a[i]%2==0:
+        print(a[i])
+        
+        
+
+#include<stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int n,j,i,a[1000],t;
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    scanf("%d",&a[i]);
+    for(i=0;i<n;i++)
+    {
+    for(j=i+1;j<n;j++)
+    {
+        if(a[i]<a[j])
+        {
+            t=a[i];
+            a[i]=a[j];
+            a[j]=t;
+        }
+    }
+    }
+    for(i=0;i<n;i++)
+    {
+    if(a[i]%2==0)
+    printf("%d ",a[i]);
+    }
+return 0;
+}
