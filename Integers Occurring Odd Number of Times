@@ -1,0 +1,119 @@
+Integers Occurring Odd Number of Times
+The program must accept an integer array of size N as the input. The program must print the integers that are occurring odd number of times in
+the array as the output. If there is no integer occurring odd number of times, then the program must print -1 as the output.
+Boundary Condition(s):
+3 <= N <= 100
+1 <= Each integer < 100
+Example Input/Output 1:
+Input:
+5
+2 3 3 4 5
+Output:
+2 4 5
+Example Input/Output 2:
+Input:
+4
+21 11 21 11
+Output:
+-1
+
+
+
+
+import java.util.*;
+public class Hello {
+
+    public static void main(String[] args) {
+        Scanner s=new Scanner(System.in);
+        int[] a=new int[1000];
+        int[] b=new int[1000];
+        int[] c=new int[1000];
+        int n,i,j,t=0;
+        n=s.nextInt();
+        for(i=0;i<n;i++)
+        {
+        a[i]=s.nextInt();
+        c[i]=a[i];
+        }
+        for(i=0;i<n;i++)
+        {
+            for(j=0;j<n;j++)
+            {
+                if(a[i]==a[j] && a[i]!=-1 && a[j]!=-1)
+                {
+                    b[i]+=1;
+                    if(i!=j)
+                    a[j]=-1;
+                }
+            }
+        }
+        for(i=0;i<n;i++)
+        {
+            if(b[i]%2!=0)
+            {
+                t=1;
+            System.out.println(c[i]);
+            }
+        }
+        if(t==0)
+        System.out.println("-1");
+	}
+}
+
+
+
+n=int(input())
+a=list(map(int,input().split(" ")))
+b=a[:]
+c=[]
+t=0
+for i in range(n):
+    c.append(0)
+    for j in range(n):
+        if a[i]==a[j] and a[i]!=-1 and a[j]!=-1:
+            c[i]+=1
+            if i!=j:
+                a[j]=-1
+for i in range(n):
+    if(c[i]%2!=0):
+        t=1
+        print(b[i])
+if t==0:
+    print("-1")
+
+
+
+#include<stdio.h>
+#include <stdlib.h>
+int main()
+{
+    int i,n,a[1000],b[1000],c[1000],j,t=0;
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+        b[i]=a[i];
+    }
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<n;j++)
+        {
+            if(a[i]==a[j] && a[i]!=-1 && a[j]!=-1)
+            {
+                c[i]+=1;
+                if(i!=j)
+                a[j]=-1;
+            }
+        }
+    }
+    for(i=0;i<n;i++)
+    {
+        if(c[i]%2!=0)
+        {
+            t=1;
+            printf("%d ",b[i]);
+        }
+    }
+    if(t==0)
+    printf("-1");
+}
