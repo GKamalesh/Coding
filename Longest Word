@@ -1,0 +1,93 @@
+Longest Word
+
+The program must accept a string S as the input. The program print the longest word from the string S as the output. If two or more longest words are of same length then consider the first one.
+
+Boundary Condition(s):
+1 <= Length of S <= 1000
+
+Example Input/Output 1:
+Input:
+Good Morning
+
+Output:
+Morning
+    
+Explanation:
+The length of the word "Good" is 4 and the length of the "Morning" is 7
+Hence Morning is printed as the output.
+
+Example Input/Output 2:
+Input:
+good time
+
+Output:
+good
+
+
+
+s=list(map(str,input().split(" ")))
+n=len(s[0])
+a=s[0]
+for i in s:
+    if(len(i)>n):
+        n=len(i)
+        a=i
+print(a)
+
+
+
+import java.util.*;
+public class Hello {
+
+    public static void main(String[] args) {
+		Scanner s=new Scanner(System.in);
+		String[] a=s.nextLine().split(" ");
+		int i,n=a[0].length();
+		String b=a[0];
+		for(i=1;i<a.length;i++)
+		{
+		    if(a[i].length()>n)
+		    {
+		        n=a[i].length();
+		        b=a[i];
+		    }
+		}
+        System.out.print(b);
+	}
+}
+
+
+
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+int main()
+{
+    char b[1000],s[1000],a[1000][1000];
+    int n,i,c=0,d=0,t=0;
+    scanf("%[^\n]s",b);
+    for(i=0;i<strlen(b);i++)
+    {
+        if(b[i]==' ')
+        {
+        c++;
+        d=0;
+        }
+        else
+        {
+        a[c][d]=b[i];
+        d++;
+        }
+    }
+    n=strlen(a[0]);
+    strcpy(s,a[0]);
+    for(i=0;i<c+1;i++)
+    {
+        if(strlen(a[i])>n)
+        {
+            n=strlen(a[i]);
+            strcpy(s,a[i]);
+        }
+    }
+    printf("%s",s);
+}
