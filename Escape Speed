@@ -1,0 +1,50 @@
+Escape Speed
+The program must accept three floating point values as G (gravitational constant), M(mass) and r(radius) of a planet. The program must
+calculate and print the escape speed of the object with precision up to 3 decimal places.
+Formula:
+Example Input/Output 1:
+Input:
+1.567 2.4783 3.4671
+Output:
+1.497
+Example Input/Output 2:
+Input:
+1.9038 2.7920 4.3937
+Output:
+1.555
+
+
+
+
+import java.util.*;
+public class Hello 
+{
+    public static void main(String[] args) 
+    {
+        Scanner s=new Scanner(System.in);
+        double g,m,r,e,a;
+        g=s.nextDouble();
+        m=s.nextDouble();
+        r=s.nextDouble();
+        e=Math.sqrt(2*g*m/r);
+        a= Double.parseDouble(String.format("%.3f", e));
+        System.out.println(a);
+	}
+}
+
+
+
+g,m,r=map(float,input().split(" "))
+print("%.3f"%(2*g*m/r)**(1/2))
+
+
+
+#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
+int main()
+{
+    float g,m,r;
+    scanf("%f %f %f",&g,&m,&r);
+    printf("%.3f",sqrt(2*g*m/r));
+}
