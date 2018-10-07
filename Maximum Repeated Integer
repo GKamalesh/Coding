@@ -1,0 +1,58 @@
+Maximum Repeated Integer
+The program must accept an array of positive integers of size N as the input. The program must print the maximum repeated integer in the
+array as the output. If none of the integer is repeated, then print -1 as the output.
+Note: There is only one maximum repeated integer in the array.
+Boundary Condition(s):
+2 <= N <= 50
+1 <= Each Integer <= 99
+Example Input/Output 1:
+Input:
+5
+2 3 3 2 2
+Output:
+2
+Example Input/Output 2:
+Input:
+3
+12 34 56
+Output:
+-1
+
+
+
+
+#include<stdio.h>
+#include <stdlib.h>
+int main()
+{
+    int n,i,a[1000],b[1000],k=0,t=0,j,s;
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    scanf("%d",&a[i]);
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<n;j++)
+        {
+            if(a[i]==a[j] && i!=j)
+            {
+                b[i]+=1;
+                t=1;
+            }
+        }
+    }
+    s=b[0];
+    if(t==0)
+    printf("-1");
+    else
+    {
+        for(i=0;i<n;i++)
+        {
+            if(b[i]>s)
+            {
+                s=b[i];
+                k=i;
+            }
+        }
+        printf("%d",a[k]);
+    }
+}
