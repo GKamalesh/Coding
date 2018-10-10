@@ -1,0 +1,75 @@
+Find and Replace
+The program must accept three string values S1, S2 and S3 as the input. The program must find all occurrences of the string S1 in the string S3
+and replace all the occurrences of the string S1 by the string S2. Finally, the program must print the modified string S3 as the output.
+Note: String values are only in lower case
+Hint: Use strcmp() in-built function
+Boundary Condition(s):
+1 <= Length of S1, S2 <= 20
+1 <= Length of S3 <= 1000
+Example Input/Output 1:
+Input:
+tiger lion
+the tiger is a wild animal the tiger is known as the king of the jungle
+Output:
+the lion is a wild animal the lion is known as the king of the jungle
+Example Input/Output 2:
+Input:
+abcd xyz
+bcd abc abcd cde abcde abcd asdf bcde
+Output:
+bcd abc xyz cde abcde xyz asdf bcde
+
+
+
+import java.util.*;
+public class Hello 
+{
+    public static void main(String[] args)
+    {
+        int i;
+        Scanner s=new Scanner(System.in);
+        String a=s.next();
+        String b=s.nextLine();
+        String[] c=s.nextLine().split(" ");
+        for(i=0;i<c.length;i++)
+        {
+            if(c[i].equals(a))
+            {
+                c[i]=b;
+            }
+        System.out.println(c[i]);
+        }
+	}
+}
+
+
+
+a,b=map(str,input().split(" "))
+c=list(map(str,input().split(" ")))
+for i in c:
+    if i==a:
+        print(b)
+    else:
+        print(i)
+ 
+
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+int main()
+{
+    char a[1000],b[1000],c[1000],t[1000];
+    int i;
+    scanf("%s %s\n",a,b);
+    for(i=0;i<100;i++)
+    {
+        scanf("%s ",c);
+        if(strcmp(c,t)==0)
+        break;
+        if(strcmp(c,a)==0)
+        printf("%s ",b);
+        else
+        printf("%s ",c);
+        strcpy(t,c);
+    }
+}
