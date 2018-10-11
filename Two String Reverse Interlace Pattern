@@ -1,0 +1,32 @@
+Two String Reverse Interlace Pattern
+Two string values of equal length are passed as the input to the program. The program must print the desired pattern as shown in the Example
+Input/Output sections.
+Boundary Condition(s):
+1 <= Length of each string <= 1000
+Example Input/Output 1:
+Input:
+min max
+Output:
+mxianm
+Example Input/Output 2:
+Input:
+good real
+Output:
+gloaoedr
+
+
+
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+int main()
+{
+    char a[1000],b[1000];
+    int i,n;
+    scanf("%s %s",a,b);
+    n=strlen(a);
+    for(i=0;i<n;i++)
+    {
+        printf("%c%c",a[i],b[n-1-i]);
+    }
+}
