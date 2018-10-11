@@ -1,0 +1,61 @@
+In a string, a "run" is a substring with consisting of consecutive
+occurrences of the same character. For example, the string
+"mississippi" contains the following runs - "ss", "ss" and "pp".
+
+In this question, given a string, you have to output the length of the
+longest run in the string.
+
+Input
+-----
+A string, having length at most 100. The string is guaranteed to have
+at least one run.
+
+Output
+------
+The length of the longest run in the string.
+
+Sample Input
+------------
+abbaaacccc
+
+Sample Output
+-------------
+4
+Sample Test Cases
+Input	Output
+Test Case 1	
+cyclone
+1
+Test Case 2	
+aabcbacaabbbad
+3
+
+
+
+
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+  char a[10000];
+  int n,i,j=0,k,b[1000];
+  scanf("%s",a);
+  n=strlen(a);
+  for(i=0;i<n;i++)
+  {
+    b[j]=1;
+    while(a[i]==a[i+1])
+    {
+      b[j]+=1;
+      i++;
+    }
+    j++;
+  }
+  k=b[0];
+  for(i=1;i<j;i++)
+  {
+    if(b[i]>k)
+      k=b[i];
+  }
+  printf("%d",k);
+}
