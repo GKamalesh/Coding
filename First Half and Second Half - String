@@ -1,0 +1,96 @@
+First Half and Second Half - String
+The program must accept a string S as the input. The program must print the alphabets of the string S which are in the first half of the alphabets
+(a to m) and then the program must print the alphabets in the string S which are in the second half of the alphabet (n to z) as the output.
+Note: The alphabets are only in lower case.
+Boundary Condition(s):
+1 <= Length of S <= 100
+Example Input/Output 1:
+Input:
+electronics
+Output:
+elecictrons
+Explantion:
+The first half of the alphabets are e l e c i c
+The second half of the alphabets are t r o n s
+Hence the output is elecictrons
+Example Input/Output 2:
+Input:
+keyboard
+Output:
+kebadyor
+
+
+
+
+import java.util.*;
+public class Hello 
+{
+    public static void main(String[] args) 
+    {
+        Scanner s=new Scanner(System.in);
+        String a=s.next();
+        int n,j;
+        char i;
+        n=a.length();
+        for(j=0;j<n;j++)
+        {
+        for(i='a';i<'n';i++)
+        {
+            if(a.charAt(j)==i)
+            System.out.print(i);
+        }
+        }
+        for(j=0;j<n;j++)
+        {
+            for(i='n';i<='z';i++)
+            {
+                if(a.charAt(j)==i)
+                System.out.print(i);
+            }
+        }
+	}
+}
+
+
+
+a=input()
+b=''
+for j in a:
+    t=0
+    for i in range(ord('a'), ord('n')):
+        if j is chr(i):
+            print(chr(i),end="")
+            t=1
+    if t==0:
+        b+=j
+print(b)
+
+
+
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+int main()
+{
+    int n,j;   
+    char i,a[1000];
+    scanf("%s",a);
+    n=strlen(a);
+    for(j=0;j<n;j++)
+    {
+        for(i='a';i<'n';i++)
+        {
+            if(a[j]==i)
+            printf("%c",i);
+        }  
+    }
+    for(j=0;j<n;j++)        
+    {
+        for(i='n';i<='z';i++)
+        {
+            if(a[j]==i)
+            printf("%c",i);
+        }
+    }
+    return 0;
+}
