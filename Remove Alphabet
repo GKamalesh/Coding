@@ -1,0 +1,90 @@
+Remove Alphabet
+The program must accept two alphabets CH1 and CH2 as the input. The program must print the output based on the following conditions.
+- If CH1 is either 'U' or 'u' then print all the uppercase alphabets except CH2.
+- If CH1 is either 'L' or 'l' then print all the lowercase alphabets except CH2.
+- For any other values of CH1 then print INVALID.
+Example Input/Output 1:
+Input:
+U v
+Output:
+A B C D E F G H I J K L M N O P Q R S T U W X Y Z
+Example Input/Output 2:
+Input:
+L C
+Output:
+a b d e f g h i j k l m n o p q r s t u v w x y z
+
+
+
+a,b=map(str,input().split(" "))
+if a is 'L' or a is 'l':
+    for i in range(ord('a'),ord('z')+1):
+        if chr(i)!=b.lower():
+            print(chr(i))
+elif a is 'U' or a is 'u':
+    for i in range(ord('A'),ord('Z')+1):
+        if chr(i)!=b.upper():
+            print(chr(i))
+else:
+    print("INVALID")
+    
+    
+
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+int main()
+{
+    char a,b,i;
+    int t=1;
+    scanf("%c %c",&a,&b);
+    if(a=='U' || a=='u' || a=='L' || a=='l')
+    t=0;
+    if(t==0)
+    {
+    for(i='a';i<='z';i++)
+    {
+        if(i!=b && i!=tolower(b))
+        {
+            if(a=='U' || a=='u')
+            printf("%c ",toupper(i));
+            else
+            printf("%c ",i);
+        }
+    }
+    }
+    else
+    printf("INVALID");
+}
+
+
+
+import java.util.*;
+public class Hello 
+{
+    public static void main(String[] args)
+    {
+		Scanner s=new Scanner(System.in);
+		char a=s.next().charAt(0);
+		char b=s.next().charAt(0);
+		int t=1;
+		char i;
+		if(a=='U' || a=='u' || a=='L' || a=='l')
+		t=0;
+		if(t==0)
+		{
+		    for(i='a';i<='z';i++)
+		    {
+		        if(i!=b && i!=Character.toLowerCase(b))
+		        {
+		            if(a=='L' || a=='l')
+		            System.out.print(i+" ");
+		            else
+		            System.out.print(Character.toUpperCase(i)+" ");
+		        }
+		    }
+		}
+		else
+		System.out.println("INVALID");
+	}
+}
