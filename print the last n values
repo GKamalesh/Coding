@@ -1,0 +1,67 @@
+You are given a sequence of integers terminated with a -1. The -1 is
+not part of the input sequence.
+
+
+Next, you are given a positive number N.
+
+You have to create a linked list with the input sequence of integers
+as entries. You can use the following structure.
+
+ struct node{
+ 	int data;
+	struct node *next;
+ };
+
+
+Now, you have to delete all but the last N elements from the linked
+list, and print the resulting list. (i.e. The resulting list will
+consist of only the last N elements from the list.)
+
+
+If N is longer than the length of the linked list, you must print -1.
+
+While printing, the entries of the list must be separated by a single
+space. 
+
+Sample Input
+------------
+3 4 5 6 -1
+1
+
+Sample Output
+-------------
+6
+Sample Test Cases
+Input	Output
+Test Case 1	
+1 2 3 -1
+2
+output:
+2 3 
+Test Case 2	
+1 2 3 4 -1
+2
+output:
+3 4 
+
+
+
+
+#include<stdio.h>
+int main()
+{
+  int i,a[1000],n,c=0;
+  while(scanf("%d",&a[c])!=-1)
+  {
+    c++;
+  }
+  n=a[c-1];
+  c=c-2;
+  if(n>c)
+    printf("-1");
+  else
+  {
+    for(i=c-n;i<c;i++)
+      printf("%d ",a[i]);
+  }
+}
