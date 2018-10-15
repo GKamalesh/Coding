@@ -1,0 +1,80 @@
+X Lines Integers Pattern
+The program must accept two integers N and X as the input. The program must print the desired pattern as shown in the Example Input/Output
+sections.
+Boundary Condition(s):
+1 <= N <= 100
+1 <= X <= 10
+Example Input/Output 1:
+Input:
+8 5
+Output:
+8
+16 17
+24 25 26 27
+32 33 34 35 36 37 38 39
+40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55
+Example Input/Output 2:
+Input:
+9 4
+Output:
+9
+18 19
+27 28 29 30
+36 37 38 39 40 41 42 43  
+
+
+
+import java.util.*;
+public class Hello 
+{
+    public static void main(String[] args) 
+    {
+		Scanner s=new Scanner(System.in);
+		int n=s.nextInt();
+		int x=s.nextInt();
+		int i,j,k=1,c;
+		for(i=1;i<=x;i++)
+		{
+		    c=n*i;
+		    for(j=0;j<k;j++)
+		    {
+		        System.out.print(c+" ");
+		        c++;
+		    }
+		    System.out.println();
+		    k*=2;
+		}
+	}
+}
+
+
+
+n,x=map(int,input().split(" "))
+k=1
+for i in range(1,x+1):
+    c=n*i
+    for j in range(k):
+        print(c)
+        c+=1
+    k*=2
+    
+
+
+#include<stdio.h>
+#include <stdlib.h>
+int main()
+{
+    int n,x,c,i,j,k=1;
+    scanf("%d %d",&n,&x);
+    for(i=1;i<=x;i++)
+    {
+        c=n*i;
+        for(j=0;j<k;j++)
+        {
+            printf("%d ",c);
+            c++;
+        }
+        printf("\n");
+        k*=2;
+    }
+}
