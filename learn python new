@@ -1,0 +1,17 @@
+Sorting
+
+a=list(sorted(map(int,input().split(" "))))   # getting list of integer
+print(*a, sep=' ')
+
+ip:
+1 6 7 5
+
+op:
+1 5 6 7
+
+#getting two integer
+
+m,n=map(int,input.split())
+
+#Reverse of the string
+print(input()[::-1])
