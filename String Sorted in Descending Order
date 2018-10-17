@@ -1,0 +1,51 @@
+String Sorted in Descending Order
+The program must accept N string values as the input. The program must print the N string values sorted lexicographically in descending order
+as the output.
+Note: All the alphabets are lowercase in each string.
+Boundary Condition(s):
+1 <= N <= 50
+1 <= Length of each string <= 1000
+Input Format:
+The first line contains the integer N.
+The next N lines contain a string in each line.
+Output Format:
+The first N lines contain the string values sorted lexicographically in descending order.
+Example Input/Output 1:
+Input:
+4
+project
+elephant
+tiger
+time
+Output:
+time
+tiger
+project
+elephant
+Example Input/Output 2:
+Input:
+5
+orange
+watermelon
+pineapple
+lemon
+strawberry
+Output:
+watermelon
+strawberry
+pineapple
+orange
+lemon
+
+
+
+
+n=int(input())
+a=[]
+for i in range(n):
+    x=input().strip()
+    a.append(x)
+a.sort()
+for i in range(n-1,-1,-1):
+    print(a[i])
+    
