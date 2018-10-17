@@ -1,0 +1,73 @@
+Replace the Vowels
+The program must accept two string values S1 and S2 as the input. For each vowel CH in the string S1, the program must replace CH by the
+vowel in the string S2 in the order of their occurrence. If there is no vowel in the string S2 then replace all the vowels by 'a'. If the vowels in the
+string S2 is not sufficient then consider last occurred vowel as the replacement vowel. Finally, the program must print the modified string S1 as
+the output.
+Note: S1 and S2 contain only lower case alphabets.
+Boundary Condition(s):
+1 <= Length of S1, S2 <= 100
+Input Format:
+The first line contains the string S1.
+The second line contains the string S2.
+Output Format:
+The first line contains the modified string S1.
+Example Input/Output 1:
+Input:
+banana
+apple
+Output:
+banene
+Explanation:
+The 1 vowel in S1 is replaced by the 1 vowel in S2. Now the string S1 is banana.
+The 2 vowel in S1 is replaced by the 2 vowel in S2. Now the string S1 is banena.
+The 3 vowel in S1 is replaced by the 2 vowel in S2. Now the string S1 is banene.
+Hence the output is banene
+Example Input/Output 2:
+Input:
+abcdedfghijkl
+wxyz
+Output:
+abcdadfghajkl
+
+
+
+
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+int main()
+{
+    int i=0,d=0,e=0,f=0;
+    char a[1000],b[1000],c[1000],s;
+    scanf("%s %s",a,b);
+    while(b[i]!='\0')
+    {
+        if(b[i]=='a' || b[i]=='e' || b[i]=='i' || b[i]=='o' || b[i]=='u')
+        {
+            c[d]=b[i];
+            d++;
+        }
+        i++;
+    }
+    for(i=0;i<strlen(a);i++)
+    {
+        if(a[i]=='a' || a[i]=='e' || a[i]=='i' || a[i]=='o' || a[i]=='u')
+        {
+            if(f==0 && d==0)
+            {
+                s=a[i];
+                f=1;
+            }
+            if(d!=0)
+            {
+               // c[d]=c[d-1];
+            a[i]=c[e];
+            if(e<d-1)
+            e++;
+            }
+            else
+            a[i]=s;
+        }
+        printf("%c",a[i]);
+    }
+}
