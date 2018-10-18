@@ -1,0 +1,153 @@
+Create a database of students using structures, where in each entry of the database will have the following fields:
+a name, which is a string with at most 128 characters
+their marks in physics which is an int between 0 and 100
+their marks in chemistry which is an int number between 0 and 100
+their marks in mathematics which is an int number between 0 and 100
+You have to output a list of students in the following order.
+if a student 'A' has lower marks in physics than a student 'B', then A's data is listed before B.
+If A and B have the same physics marks and A has lower chemistry marks than B, then A is listed before B.
+If A and B have the same marks in physics and chemistry, and A has lower marks in mathematics than B, then A is listed before B.
+If all marks are equal and A's name precedes B's name in the dictionary order, then A is listed before B.
+.
+
+Input Format :
+First line contains the number of students n, where 1<=n<=100.
+In following n lines each line contains(space separated)  a name and their respective marks in physics, chemistry, maths, where 0<=marks<=100.
+
+Output Format :
+Sorted database of n lines.
+
+Sample Test Cases
+Input	Output
+Test Case 1	
+2
+kanu 84 74 88
+parvez 69 78 85
+output:
+parvez	69	78	85
+kanu	84	74	88
+Test Case 2	
+4
+apurva 72 78 84
+mayank 83 76 86
+abha 72 79 75
+jyoti 83 76 92
+output:
+apurva	72	78	84
+abha	72	79	75
+mayank	83	76	86
+jyoti	83	76	92
+
+
+
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+  long int n,i,j,b[10000],c[10000],k,d[10000],t,s;
+  char a[1000][1000],h[1000];
+  scanf("%ld",&n);
+  for(i=0;i<n;i++)
+  {
+    scanf("%s",a[i]);
+    scanf("%ld",&b[i]);
+    scanf("%ld",&c[i]);
+    scanf("%ld",&d[i]);
+  }
+  for(i=0;i<n;i++)
+  {
+    for(j=i+1;j<n;j++)
+    {
+      if(b[j]<b[i])
+      {
+        t=b[j];
+        b[j]=b[i];
+        b[i]=t;
+        t=c[i];
+        c[i]=c[j];
+        c[j]=t;
+        t=d[i];
+        d[i]=d[j];
+        d[j]=t;
+        strcpy(h,a[i]);
+        strcpy(a[i],a[j]);
+        strcpy(a[j],h);
+      }
+    }
+  }
+  for(k=0;k<n;k++)
+  {
+  for(i=0;i<n;i++)
+  {
+    if(b[i]==b[i+1])
+    {
+      if(c[i]==c[i+1])
+         {
+           if(d[i]>d[i+1])
+           {
+             j=i+1;
+             t=b[j];
+        b[j]=b[i];
+        b[i]=t;
+        t=c[i];
+        c[i]=c[j];
+        c[j]=t;
+        t=d[i];
+        d[i]=d[j];
+        d[j]=t;
+        strcpy(h,a[i]);
+        strcpy(a[i],a[j]);
+        strcpy(a[j],h);
+           }
+        else if(d[i]==d[i+1])
+        {
+          if(a[i+1][0]<a[i][0])
+          {
+            j=i+1;
+            t=b[j];
+        b[j]=b[i];
+        b[i]=t;
+        t=c[i];
+        c[i]=c[j];
+        c[j]=t;
+        t=d[i];
+        d[i]=d[j];
+        d[j]=t;
+        strcpy(h,a[i]);
+        strcpy(a[i],a[j]);
+        strcpy(a[j],h);
+      }
+        }    
+         }
+         else if(c[i]>c[i+1])
+         {
+           j=i+1;
+            t=b[j];
+        b[j]=b[i];
+        b[i]=t;
+        t=c[i];
+        c[i]=c[j];
+        c[j]=t;
+        t=d[i];
+        d[i]=d[j];
+        d[j]=t;
+        strcpy(h,a[i]);
+        strcpy(a[i],a[j]);
+        strcpy(a[j],h);
+      }
+     }
+    }
+  }
+  for(i=0;i<n;i++)
+         {
+           printf("%s",a[i]);
+    printf("\t");
+           printf("%ld",b[i]);
+printf("\t");
+    printf("%ld",c[i]);
+    printf("\t");
+           printf("%ld",d[i]);
+    if(i!=n-1)
+           printf("\n");
+         }
+}
