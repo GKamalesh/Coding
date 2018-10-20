@@ -1,0 +1,62 @@
+String Modification
+The program must accept a string S as the input. The program must remove all the vowels and insert a character "." before each consonant in
+the given string S. Then the program must print the modified string as the output.
+Note: All the alphabets in S are only in lowercase.
+Boundary Condition(s):
+3 <= Length of S <=100
+Input Format:
+The first line contains the string S.
+Output Format:
+The first line contains the modified string.
+Example Input/Output 1:
+Input:
+hello
+Output:
+.h.l.l
+Example Input/Output 2:
+Input:
+skillrack
+Output:
+.s.k.l.l.r.c.k
+
+
+
+a=input()
+for i in a:
+    if i not in 'aeiou':
+        print('.',end="")
+        print(i,end="")
+
+
+
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+int main()
+{
+    int i;
+    char a[1000];
+    scanf("%s",a);
+    for(i=0;i<strlen(a);i++)
+    {
+        if(a[i]!='a' && a[i]!='e' && a[i]!='i' && a[i]!='o' && a[i]!='u')
+        printf(".%c",a[i]);
+    }
+}
+
+
+
+import java.util.*;
+public class Hello {
+
+    public static void main(String[] args) {
+		Scanner s=new Scanner(System.in);
+		String a=s.next();
+		int i;
+		for(i=0;i<a.length();i++)
+		{
+		    if(a.charAt(i)!='a' && a.charAt(i)!='e' && a.charAt(i)!='i' && a.charAt(i)!='o' && a.charAt(i)!='u')
+		    System.out.print("."+a.charAt(i));
+		}
+	}
+}
