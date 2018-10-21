@@ -1,0 +1,40 @@
+Rth Ring in Matrix
+The program must accept an integer matrix of size NxN and integer R as the input. The program must print only the elements present in the R
+ring as the output as shown in Example Input/Output Sections.
+Boundary Condition(s):
+1 <= N <= 100
+1 <= R <= (N+1)/2
+Input Format:
+The first line contains the value of N.
+The next N lines contain N integers separated by space(s).
+The (N+2) line contains the value of R.
+Output Format:
+The first N lines contain the elements present in the R ring as the output as shown in Example Input/Output Sections.
+Example Input/Output 1:
+Input:
+5
+6 9 4 1 4
+8 1 2 6 7
+6 6 2 6 6
+8 3 2 4 4
+6 2 8 9 3
+2
+Output:
+- - - - - 
+- 1 2 6 -
+- 6 - 6 - 
+- 3 2 4 - 
+- - - - - 
+Example Input/Output 2:
+Input:
+4
+8 8 1 9
+1 8 3 6
+7 1 9 5
+2 9 8 4
+1
+Output:
+8 8 1 9
+1 - - 6
+7 - - 5
+2 9 8 4
