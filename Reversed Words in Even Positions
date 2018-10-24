@@ -48,3 +48,83 @@ public class Hello
         System.out.println(c);
 	}
 }
+
+
+
+t,a,c=0,list(map(str,input().split(" "))),''
+for i in a[::-1]:
+    if t%2==1:
+        c=i[::-1]
+    else:
+        c=i
+    t+=1
+    print(c,end=" ")
+
+
+
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+int main()
+{
+    char b[10000],a[1000][1000],s[1000];
+    int i,n,j=0,f=0,t=0,l=0;
+    scanf("%[^\n]s",b);
+    n=strlen(b);
+    for(i=0;i<n;i++)
+    {
+        if(b[i]==' ')
+        {
+            t++;
+            j=0;
+        }
+        else
+        {
+            a[t][j]=b[i];
+            j++;
+        }
+    }
+    for(i=t;i>=0;i--)
+    {
+        if(l%2==1)
+        {
+            strcpy(s,a[i]);
+            f=0;
+            for(j=strlen(s)-1;j>=0;j--)
+            {
+                a[i][f]=s[j];
+                f++;
+            }
+        }
+        l++;
+        printf("%s ",a[i]);
+    }
+}
+
+
+
+#include<iostream>
+#include<string.h>
+using namespace std;
+int main(int argc, char** argv)
+{
+char a[1000][1000],s[10000];
+int i=0,t=0,f,j,k;
+while(cin>>a[i])
+    i++;
+for(j=i;j>=0;j--)
+{
+    if(t%2==0)
+    {
+        strcpy(s,a[j]);
+        f=0;
+        for(k=strlen(s)-1;k>=0;k--)
+        {
+        a[j][k]=s[f];
+        f++;
+        }
+    }
+    t++;
+    cout<<a[j]<<" ";
+}
+}
