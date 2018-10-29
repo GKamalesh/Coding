@@ -1,0 +1,61 @@
+Sum of Left Side Elements
+An array of N integers is passed as the input to the program. The program must print the sum of all the elements present to the left of each
+element as the output.
+Boundary Condition(s):
+2 <= N <= 100
+Input Format:
+The first line contains the value of N.
+The second line contains N elements separated by space.
+Output Format:
+The first line contains the sum of the left side element(s) of each element separated by a space.
+Example Input/Output 1:
+Input:
+5
+2 4 6 8 10
+Output:
+0 2 6 12 20
+Explanation:
+For the first element, there is no element in the left side so the sum is 0.
+For the second element, there is only one element in the left side 2 so the sum is 2.
+For the third element, the sum of elements on the left side is 2+4 = 6.
+For the fourth element, the sum of elements on the left side is 2+4+6 = 12.
+For the fifth element, the sum of elements on the left side is 2+4+6+8 = 20.
+Hence the output is 0 2 6 12 20.
+Example Input/Output 2:
+Input:
+10
+45 35 42 39 2 24 22 46 16 49
+Output:
+0 45 80 122 161 163 187 209 255 271
+
+
+
+import java.util.*;
+public class Hello 
+{
+    public static void main(String[] args) 
+    {
+        Scanner s=new Scanner(System.in);
+        int n=s.nextInt();
+        int[] a=new int[1000];
+        int i,j,c;
+        for(i=0;i<n;i++)
+        {
+        c=0;
+        a[i]=s.nextInt();
+        for(j=0;j<i;j++)
+        c+=a[j];
+        System.out.println(c);
+        }
+	}
+}
+
+
+
+n=int(input())
+a=list(map(int,input().split()))
+for i in range(n):
+    s=0
+    for j in a[:i]:
+        s+=j
+    print(s)
