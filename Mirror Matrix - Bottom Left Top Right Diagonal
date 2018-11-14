@@ -1,0 +1,44 @@
+Mirror Matrix - Bottom Left Top Right Diagonal
+An integer matrix of size R rows and C columns and consisting of integer values is passed as the input. The program must print the matrix which
+is mirrored along the bottom left to top right diagonal.
+Boundary Condition(s):
+2 <= R, C <= 100
+Input Format:
+The first line contains R and C separated by a space.
+The next R lines each containing C values separated by a space.
+Output Format:
+The first R lines contain the mirror matrix.
+Example Input/Output 1:
+Input:
+3 3
+0 2 8
+5 0 7
+4 1 6
+Output:
+6 7 8
+1 0 2
+4 5 0
+Example Input/Output 2:
+Input:
+3 5
+1 2 3 4 5
+6 7 8 9 1
+2 3 4 5 6
+Output:
+6 1 5 4 3
+5 9 8 7 2
+4 3 2 6 1
+
+Input:
+Expected Output:
+Your Program Output:
+3 9
+7 34 38 18 14 43 28 27 32 
+24 43 48 41 4 20 7 16 3 
+37 9 36 6 13 24 39 7 45
+45 3 32 27 28 43 14 18 38 
+7 16 7 20 4 41 48 43 34 
+39 24 13 6 36 9 37 24 7
+45 3 32 0 0 43 36 48 38 
+7 16 27 0 4 0 9 43 34 
+39 24 13 6 0 0 37 24 7
