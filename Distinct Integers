@@ -1,0 +1,56 @@
+Distinct Integers
+The program must accept N integers as the input. The program must print only the distinct values ignoring the repetition of the values which
+have appeared earlier in the input sequence.
+Boundary Condition(s):
+2 <= N <= 100
+Input Format:
+The first line contains N.
+The second line contains the N integer values separated by a space.
+Output Format:
+The distinct integer values in the same order of occurrence as the input sequence.
+Example Input/Output 1:
+Input:
+6
+10 20 20 30 40 10
+Output:
+10 20 30 40
+Example Input/Output 2:
+Input:
+4
+3 4 2 1
+Output:
+3 4 2 1
+
+
+
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+    int n,a[1000],i,j,f;
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+        f=0;
+        scanf("%d",&a[i]);
+        for(j=0;j<i;j++)
+        {
+            if(a[j]==a[i])
+            {
+                f=1;
+                break;
+            }
+        }
+        if(f==0)
+        printf("%d ",a[i]);
+    }
+}
+
+
+
+n,t=int(input()),0
+a=list(map(int,input().split()))
+for i in a:
+    if i not in a[:t]:
+        print(i)
+    t+=1
