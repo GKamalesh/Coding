@@ -1,0 +1,28 @@
+Count of Characters with Same Adjacent Neighbours (Error Identification)
+The program must accept the value of a string S as the input. The program must print the count of characters with same adjacent characters as
+the output.
+There are logical errors in the program and hence it does not print the desired output. Rectify
+
+
+
+#include<stdio.h>
+int main()
+{
+    char str[101];
+    int len, count = 2 ;
+    scanf("%s", str);
+    len=strlen(str);
+    if(len - 1 <= 2)
+    {
+        printf("%d", len);
+        return 0;
+    }
+    for(int index = 1; index < len - 1; index++)
+    {
+        if(str[index - 1] == str[index + 1])
+        {
+            count++;
+        }
+    }
+    printf("%d", count);
+}
