@@ -1,0 +1,44 @@
+Prime Frequency
+The program must accept a string S as the input. The program must print YES if the frequency of all the characters in S are prime numbers. Else
+the program must print NO as the output.
+Boundary Condition(s):
+1 <= Length of S <= 10000
+Input Format:
+The first line contains the value of string S.
+Output Format:
+The first line contains either YES or NO.
+Example Input/Output 1:
+Input:
+cpppcpcp
+Output:
+YES
+Explanation:
+The frequency of character c is 3
+The frequency of character p is 5
+Here both 3 and 5 are prime numbers.
+Hence the output is YES
+Example Input/Output 2:
+Input:
+Hello
+Output:
+NO
+
+
+
+=input().strip()
+b=[]
+s=0
+for i in a:
+    b.append(a.count(i))
+for i in b:
+    if i==1:
+        s=1
+        break
+    for j in range(2,i):
+        if i%j==0:
+            s=1
+            break
+if s==1:
+    print("NO")
+else:
+    print("YES")
