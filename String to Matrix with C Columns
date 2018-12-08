@@ -1,0 +1,41 @@
+String to Matrix with C Columns
+The program must accept a string S.The program must print S as a matrix with C columns. The value of C is passed as the input. If the last row is
+not filled with C characters, then pad the remaining columns with * as shown in the Example Input/Output section.
+Boundary Condition(s):
+1 <= Length of S <= 100
+Input Format:
+The first line contains the string S and an integer C separated by a space.
+Output Format:
+The list of lines containing the matrix as shown in the Example Input/Output section.
+Example Input/Output 1:
+Input:
+skillrack 4
+Output:
+skil
+lrac
+k***
+Example Input/Output 2:
+Input:
+dailychallenge 5
+Output:
+daily
+chall
+enge*
+
+
+
+
+a,m=map(str,input().split())
+n,t=int(m),0
+r=len(a)%n
+if r!=0:
+    r=n-r
+b=list(a)
+for i in range(r):
+    b.append("*")
+for i in b: 
+    if t==n:        
+        print() 
+        t=0
+    print(i,end="")
+    t+=1
