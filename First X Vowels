@@ -1,0 +1,62 @@
+First X Vowels
+The program must accept a string value S and an integer X as the input. The program must print the first X vowels in S as the output. If there are
+no vowels or less than X vowels then the program must print -1 as the output.
+Boundary Condition(s):
+1 <= Length of S <= 100
+1 <= X <= 100
+Input Format:
+The first line contains the value of string S.
+Output Format:
+The first line contains either the first X vowels in S or -1.
+Example Input/Output 1:
+Input:
+ScorEboard 3
+Output:
+oEo
+Explanation:
+The vowels present in the string "ScorEboard" are o E o a.
+The first 3 vowels are o E o.
+Hence the output is oEo
+Example Input/Output 2:
+Input:
+softcopy 5
+Output:
+-1
+
+
+
+import java.util.*;
+public class Hello 
+{
+    public static void main(String[] args) 
+    {
+        Scanner s=new Scanner(System.in);
+        String a=s.next();
+        int n=s.nextInt();
+        int i;
+        String x="AEIOUaeiou";
+        String b="";
+        for(i=0;i<a.length();i++)
+        {
+            if (x.contains(Character.toString(a.charAt(i))))
+            b+=a.charAt(i);
+        }
+        if(b.length()>=n)
+        System.out.print(b.substring(0,n));
+        else
+        System.out.print("-1");
+	}
+}
+
+
+
+s,x=map(str,input().split())
+n=int(x)
+x=''
+for i in s:
+    if i in 'aeiouAEIOU':
+        x+=i
+if len(x)>=n:
+    print(x[:n])
+else:
+    print("-1")
