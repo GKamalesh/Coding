@@ -1,0 +1,42 @@
+Characters Pattern
+The program must accept two characters CH1, CH2, and an integer N as the input. The program must print the desired pattern as shown in the
+Example Input/Output section.
+Boundary Condition(s):
+1 <= N <= 100
+Input Format:
+The first line contains the values of CH1, CH2 and N separated by space(s).
+Output Format:
+The first N lines containing the desired pattern as shown in the Example Input/Output section.
+Example Input/Output 1:
+Input:
+* # 4
+Output:
+* # # #
+* * # #
+* * * #
+* * * *
+Example Input/Output 2:
+Input:
+A C 7
+Output:
+A C C C C C C
+A A C C C C C
+A A A C C C C
+A A A A C C C
+A A A A A C C
+A A A A A A C
+A A A A A A A
+
+
+
+
+l,t=list(map(str,input().split())),1
+a,b,n=l[0],l[1],int(l[2])
+for i in range(n):
+    for j in range(n):
+        if j<t:
+            print(a,end=" ")
+        else:
+            print(b,end=" ")
+    print()
+    t+=1
