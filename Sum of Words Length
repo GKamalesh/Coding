@@ -1,0 +1,31 @@
+Sum of Words Length
+The program must accept a string S as the input. The program must print the sum of the length of each word in the string S as the output.
+Boundary Condition(s):
+1 <= Length of S <= 1000
+Input Format:
+The first line contains string S.
+Output Format:
+The first line contains the sum of the length of each word in the string S.
+Example Input/Output 1:
+Input:
+Prime Minister of India
+Output:
+20
+Explanation:
+The length of "Prime" is 5.
+The length of "Minister" is 8.
+The length of "of" is 2.
+The length of "India" is 5.
+So the sum is 20 ( 5 + 8 + 2 + 5 ).
+Hence the output is 20
+Example Input/Output 2:
+Input:
+He    is my    friend
+Output:
+12
+
+
+a,s=list(map(str,input().split())),0
+for i in a:
+    s+=len(i)
+print(s)
