@@ -1,0 +1,36 @@
+Sum of Multiples of X from M to N
+The program must accept three integers M, N and X as the input. The program must print the sum of multiples of X from M to N as the output. If
+there is no multiple of X from M to N then the program must print -1 as the output.
+Boundary Condition(s):
+1 <= N <= 1000
+1 <= M <= N
+1 <= X <= 100
+Input Format:
+The first line contains the values of M, N and X separated by space(s).
+Output Format:
+The first line contains either the sum of multiples of X from M to N or -1.
+Example Input/Output 1:
+Input:
+5 25 3
+Output:
+105
+Explanation:
+The multiples of 3 from 5 to 25 are 6, 9, 12, 15, 18, 21 and 24.
+So their sum is 105 (6 + 9 + 12 + 15 + 18 + 21 + 24).
+Hence the output is 105
+Example Input/Output 2:
+Input:
+10 20 33
+Output:
+-1
+
+
+
+m,n,x=map(int,input().split())
+s=0
+for i in range(m,n+1):
+    if i%x==0:
+        s+=i
+if s==0:
+    s-=1
+print(s)
