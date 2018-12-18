@@ -1,4 +1,8 @@
-There are N bottles with different capacities filled with different types of spices. The spices are mixed in certain order to get a perfect mix. The bottle to be picked up to mix with spice is calculated by adding the capacity of the current bottle to the current position of the bottle. The chef is greedy and hence wants to mix the maximum number of different spices(not maximum capacity) to the dish. Print the capacities of the bottles to be mixed in the specified order to get maximum types of spices. 
+There are N bottles with different capacities filled with different types of spices.
+The spices are mixed in certain order to get a perfect mix.
+The bottle to be picked up to mix with spice is calculated by adding the capacity of the current bottle to the current position of the bottle.
+The chef is greedy and hence wants to mix the maximum number of different spices(not maximum capacity) to the dish. 
+Print the capacities of the bottles to be mixed in the specified order to get maximum types of spices. 
 
 Note: If there are more than one maximum set of spices exist, print the first occurring maximum set. 
 
