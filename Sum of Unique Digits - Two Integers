@@ -41,3 +41,39 @@ if s==c:
     print("YES")
 else:
     print("NO")
+ 
+
+
+import java.util.*;
+public class Hello
+{
+    public static void main(String[] args)
+    {
+        Scanner s=new Scanner(System.in);
+        int m=s.nextInt();
+        int n=s.nextInt();
+        int t=0,c=0,r,i=0,j=0;
+        ArrayList<Integer> a=new ArrayList<Integer>(1000);
+        ArrayList<Integer> b=new ArrayList<Integer>(1000);
+        while(m>0)
+        {
+            r=m%10;
+            if(!a.contains(r))
+            t+=r;
+            m/=10;
+            a.add(r);
+        }
+        while(n>0)
+        {
+            r=n%10;
+            if(!b.contains(r))
+            c+=r;
+            n/=10;
+            b.add(r);
+        }
+        if(t==c)
+        System.out.print("YES");
+        else
+        System.out.print("NO");
+	}
+}
