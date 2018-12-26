@@ -1,0 +1,43 @@
+Vowels - Palindrome
+The program must accept a string S as the input. The program must remove the consonants from the string S. Finally, the program must print
+YES if the modified string S is a palindrome. Else the program must print NO as the output. If there is no vowel in the modified string S then the
+program must print -1 as the output.
+Note: All the alphabets in S are only in lower case.
+Boundary Condition(s):
+1 <= Length of S <= 1000
+Input Format:
+The first line contains the string S.
+Output Format:
+The first line contains either the string value (YES or NO) or -1.
+Example Input/Output 1:
+Input:
+abcuhuvmnba
+Output:
+YES
+Explanation:
+The consonants in the string "abcuhuvmnba" are removed. Now the string becomes "auua". So the string "auua" is a palindrome.
+Hence the output is YES
+Example Input/Output 2:
+Input:
+xayzuezyax
+Output:
+NO
+Example Input/Output 3:
+Input:
+bkldhgcj
+Output:
+-1
+
+
+
+a=input().strip()
+b=''
+for i in a:
+    if i in 'aeiou':
+        b+=i
+if b=='':
+    print("-1")
+elif b==b[::-1]:
+    print("YES")
+else:
+    print("NO")
