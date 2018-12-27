@@ -1,0 +1,44 @@
+Reverse the Even Digits
+The program must accept an integer N as the input. The program must print the even digits of N in reverse order as the output. If there is no
+even digit in N then the program must print -1 as the output.
+Note: The leading zero(s) must be removed in the output.
+Boundary Condition(s):
+1 <= N <= 10^8
+Input Format:
+The first line contains the integer N.
+Output Format:
+The first line contains either the even digits of N in reverse order or -1.
+Example Input/Output 1:
+Input:
+5264380
+Output:
+8462
+Explanation:
+The even digits in 5264380 are 2, 6, 4, 8 and 0. So print the even digits in reverse order as 8462. Here the leading zero is removed.
+Hence the output is 8462
+Example Input/Output 2:
+Input:
+13579
+Output:
+-1
+
+
+
+
+a,t=input()[::-1],-1
+b=[]
+for i in a:
+    if int(i)%2==0:
+        b.append(int(i))
+if len(b)==0:
+    print("-1")
+else:
+    for i in range(len(b)):
+        if b[i]!=0:
+            t=i
+            break
+    if t==-1:
+        print("0")
+    else:
+        for i in range(t,len(b)):
+            print(b[i],end="")
