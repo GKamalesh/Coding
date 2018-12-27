@@ -42,3 +42,45 @@ else:
     else:
         for i in range(t,len(b)):
             print(b[i],end="")
+
+
+
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+    int n,a[1000],i=0,t=-1,r;
+    scanf("%d",&n);
+    while(n>0)
+    {
+        r=n%10;
+        if(r%2==0)
+        {
+        a[i]=r;
+        i++;
+        }
+        n/=10;
+    }
+    if(i==0)
+    printf("-1");
+    else
+    {
+        n=i;
+        for(i=0;i<n;i++)
+        {
+            if(a[i]!=0)
+            {
+                t=i;
+                break;
+            }
+        }
+        if(t==-1)
+        printf("0");
+        else
+        {
+            for(i=t;i<n;i++)
+            printf("%d",a[i]);
+        }
+    }
+    return 0;
+}
