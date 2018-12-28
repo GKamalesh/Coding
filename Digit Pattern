@@ -1,0 +1,35 @@
+Digit Pattern
+The program must accept an integer N the input. The program must print the desired pattern as shown in the Example Input/Output section.
+Boundary Condition(s):
+1 <= N <= 10^8
+Input Format:
+The first line contains the value of N.
+Output Format:
+The list of lines containing the desired pattern as shown in the Example Input/Output sections.
+Example Input/Output 1:
+Input:
+41325
+Output:
+|****
+|*
+|***
+|**
+|*****
+Example Input/Output 2:
+Input:
+60710
+Output:
+|******
+|
+|*******
+|*
+|
+
+
+
+a=input().strip()
+for i in a:
+    print("|",end="")
+    for j in range(int(i)):
+        print("*",end="")
+    print()
