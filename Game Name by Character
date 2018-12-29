@@ -1,0 +1,85 @@
+Game Name by Character
+
+The program must accept a character CH (Lowercase) as input and print as per the following conditions.
+If CH is a, print Athletics,
+If CH is b, print Basketball,
+If CH is c, print Cricket,
+If CH is d, print Discus throw,
+If CH is g, print Golf,
+If CH is h, print Hockey,
+If CH is f, print Football,
+If CH is t, print Tennis,
+For any other value print Invalid.
+
+Boundary Condition(s):
+a <= CH <= z
+
+Input Format:
+The first line contains the value of CH.
+
+Output Format:
+The first line contains any of the following values Athletics, Basketball, Cricket, Discus throw, Golf, Hockey, Football, Tennis or Invalid.
+
+Example Input/Output 1:
+Input:
+h
+
+Output:
+Hockey
+
+Example Input/Output 2:
+Input:
+e
+
+Output:
+Invalid
+
+
+
+#include <stdio.h>
+int main()
+{
+    char s;
+    scanf("%c",&s);
+    if(s=='a')
+    printf("Athletics");
+    else if(s=='b')
+    printf("Basketball");
+    else if(s=='c')
+    printf("Cricket");
+    else if(s=='d')
+    printf("Discus throw");
+    else if(s=='g')
+    printf("Golf");
+    else if(s=='h')
+    printf("Hockey");
+    else if(s=='f')
+    printf("Football");
+    else if(s=='t')
+    printf("Tennis");
+    else
+    printf("Invalid");
+    return 0;
+}
+
+
+
+a=input()
+if a=='a':
+    print("Athletics")
+elif a=='b':
+    print("Basketball")
+elif a=='c':
+    print("Cricket")
+elif a=='d':
+    print("Discus throw")
+elif a=='g':
+    print("Golf")
+elif a=='h':
+    print("Hockey")
+elif a=='f':
+    print("Football")
+elif a=='t':
+    print("Tennis")
+else:
+    print("Invalid")
