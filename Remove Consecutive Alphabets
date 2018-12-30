@@ -1,0 +1,35 @@
+Remove Consecutive Alphabets
+The program must accept a string S as the input. The program must remove the subsequent  alphabets in S which are in the same case. Finally,
+the program must print the modified string as the output.
+Boundary Condition(s):
+1 <= Length of S <= 100
+Input Format:
+The first line contains the string S.
+Output Format:
+The first line contains the modified string.
+Example Input/Output 1:
+Input:
+abcDEFghi
+Output:
+aDg
+Explanation:
+The consecutive lower case and upper case alphabets in the string "abcDEFghi" are "bc", "EF" and "hi".
+After removing those consecutive alphabets in "abcDEFghi", the string becomes "aDg".
+Hence the output is aDg
+Example Input/Output 2:
+Input:
+rDFjksdfGJejJKDbfgKrSDF
+Output:
+rDjGeJbKrS
+
+
+
+
+a=input().strip()
+for i in range(len(a)):
+    if i==0:
+        print(a[i],end="")
+    elif (a[i].isupper() and a[i-1].isupper()) or (a[i].islower() and a[i-1].islower()):
+        f=1
+    else:
+        print(a[i],end="")
