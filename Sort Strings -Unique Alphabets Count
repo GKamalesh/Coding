@@ -1,0 +1,104 @@
+Sort Strings -Unique Alphabets Count  
+
+N string values are passed as input. The program must sort and print the strings based on the count of unique alphabets in them.
+If two strings have same unique alphabet count, then sort them based on lexicographical order. 
+Sorting based on the count of unique characters must be done in descending order
+(that is the string having the highest unique character count must be printed first).
+
+Boundary Condition(s):
+1 <= N <= 1000
+1 <= Length of string <= 1000
+
+Input Format:
+The first line contains N.
+The next N lines contain the values of N strings.
+
+Output Format:
+The first N lines contain the string values sorted based on the given conditions.
+
+Example Input/Output 1:
+Input:
+3
+bubble
+telegram
+munch
+
+Output:
+telegram
+munch
+bubble
+
+Example Input/Output 2:
+Input:
+4
+sit
+miner
+flood
+temple
+
+Output:
+miner
+temple
+flood
+sit
+
+
+
+#include <stdio.h>
+#include<string.h>
+int main()
+{
+    int i,j,n,b[1000],k,f=0;
+    char a[1000][1000],s[1000],l;
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+    scanf("%s",s);
+    strcpy(a[i],s);
+    }
+    for(i=0;i<n;i++)
+    {
+        l=strlen(a[i]);
+        for(j=0;j<l;j++)
+        {
+            f=0;
+            for(k=0;k<j;k++)
+            {
+                if(a[i][j]==a[i][k] && j!=k)
+                {
+                    f=1;
+                    break;
+                }
+            }
+            if(f==0)
+            b[i]+=1;
+        }
+    }
+    for(i=0;i<n-1;i++)
+    {
+        for(j=i+1;j<n;j++)
+        {
+            if(b[j]>b[i])
+            {
+                l=b[j];
+                b[j]=b[i];
+                b[i]=l;
+                strcpy(s,a[j]);
+                strcpy(a[j],a[i]);
+                strcpy(a[i],s);
+            }
+            else if(b[j]==b[i])
+            {
+                if(strcmp(a[i],a[j])>0)
+                {
+                    strcpy(s,a[j]);
+                    strcpy(a[j],a[i]);
+                    strcpy(a[i],s);
+                }
+            }
+        }
+    }
+    for(i=0;i<n;i++)
+    printf("%s\n",a[i]);
+    return 0;
+}
