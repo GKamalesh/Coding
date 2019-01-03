@@ -1,0 +1,62 @@
+First and Last N Characters
+The program must accept a string S contains only alphabets and an integer N as the input. The program must print the first N alphabets in the
+string and then print the last N alphabets in the string as the output.
+Boundary Condition(s):
+2 <= Length of S <= 100
+1 <= N <= Length of S
+Input Format:
+The first line contains the string S.
+The second line contains the integer N.
+Output Format:
+The first line contains the first N alphabets and the last N alphabets .
+Example Input/Output 1:
+Input:
+Engineering
+3
+Output:
+Enging
+Explanation:
+The first 3 alphabets in the string "Engineering" are E n g.
+The last 3 alphabets in the string "Engineering" are i n g.
+Hence the output is Enging
+Example Input/Output 2:
+Input:
+first
+5
+Output:
+firstfirst
+
+
+
+a=input().strip()
+n=int(input())
+print(a[:n]+a[-n:])
+
+
+
+import java.util.*;
+public class Hello 
+{
+    public static void main(String[] args)
+    {
+        Scanner s=new Scanner(System.in);
+        String a=s.next();
+        int n=s.nextInt();
+        System.out.print(a.substring(0,n)+a.substring(a.length()-n,a.length()));
+	}
+}
+
+
+
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+    int i,n;
+    char a[100];
+    scanf("%s %d",a,&n);
+    for(i=0;i<n;i++)
+    printf("%c",a[i]);
+    for(i=strlen(a)-n;i<strlen(a);i++)
+    printf("%c",a[i]);
+}
