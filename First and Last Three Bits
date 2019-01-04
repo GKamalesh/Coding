@@ -1,0 +1,53 @@
+First and Last Three Bits
+The program must accept an integer N as the input. The program must the decimal equivalent of the first three bits and the last three bits in the
+binary representation of N as the output.
+Boundary Condition(s):
+4 <= N <= 10^8
+Input Format:
+The first line contains the value of N.
+Output Format:
+The first line contains the decimal equivalent of the first three bits and the last three bits separated by a space.
+Example Input/Output 1:
+Input:
+86
+Output:
+5 6
+Explanation:
+The binary representation of 86 is 1010110.
+The decimal equivalent of the first three bits (101) in the binary presentation of 86 is 5.
+The decimal equivalent of the last three bits (110) in the binary presentation of 86 is 6.
+Hence the output is 5 6
+Example Input/Output 2:
+Input:
+7
+Output:
+7 7
+
+
+
+a=bin(int(input()))
+m=a[:5]
+n=a[-3:]
+print(int(m,2))
+print(int(n,2))
+
+
+
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+    int n,a[10000000],i,m=0,t=0,c=0,s=0,b=0;
+    scanf("%d",&n);
+    while(n>0)
+    {
+        a[m]=n%2;
+        n/=2;
+        m++;
+    }
+    for(i=0;i<3;i++)
+    t+=(a[i]%10)*pow(2,c++);
+    for(i=m-3;i<m;i++)
+    s+=(a[i]%10)*pow(2,b++);
+    printf("%d %d",s,t);
+}
