@@ -1,0 +1,39 @@
+Number - Asterisk Triangle Pattern
+The program must accept an integer N as the input. The program must print the desired pattern as shown in the Example Input/Output
+section.
+Boundary Condition(s):
+1 <= N <= 100
+Input Format:
+The first line contains the value of N.
+Output Format:
+The first N lines containing the desired pattern as shown in the Example Input/Output section.
+Example Input/Output 1:
+Input:
+5
+Output:
+1
+22
+3*3
+4**4
+5***5
+Example Input/Output 2:
+Input:
+7
+Output:
+1
+22
+3*3
+4**4
+5***5
+6****6
+7*****7
+
+
+
+n=int(input())
+for i in range(n):
+    if i!=0:
+        print(i+1,end="")
+    for j in range(i-1):
+        print("*",end="")
+    print(i+1)
