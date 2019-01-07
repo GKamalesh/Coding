@@ -1,0 +1,36 @@
+Amount Paid by Customer
+A customer buys three items in a shop. If exactly two items have the same price, then a 10% discount is applied to those two items. The program
+must accept three integers X, Y and Z as the price of the three items and then the program must print the amount to be paid by the customer
+with the precision up to two decimal places as the output.
+Boundary Condition(s):
+1 <= X, Y, Z <= 10^5
+Input Format:
+The first line contains three integers X, Y and Z separated by space.
+Output Format:
+The first line contains the amount to be paid by the customer with the precision up to two decimal places.
+Example Input/Output 1:
+Input:
+100 200 200
+Output:
+460.00
+Explanation:
+The prices of the last two items are 200 and 200. Here the prices of the two items are same. 10% of 200 is 20.
+After 10% discount is applied (for 200) the price to be paid is 180 (200-20).
+Hence the output is 460.00 (100.00+180.00+180.00)
+Example Input/Output 2:
+Input:
+450 150 250
+Output:
+850.00
+
+
+
+a,b,c=map(float,input().split())
+if a==b and b!=c:
+    print("%.2f"%(a-a/10+b-b/10+c))
+elif a==c and b!=c:
+    print("%.2f"%(a-a/10+b+c-c/10))
+elif c==b and c!=a:
+    print("%.2f"%(a+b-b/10+c-c/10))
+else:
+    print("%.2f"%(a+b+c))
