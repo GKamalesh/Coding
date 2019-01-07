@@ -1,0 +1,30 @@
+Number of Tiles - Cover a Floor
+The floor of a rectangular playground is to be covered using square tiles. The area of the playground as X and side of a square tile as Y
+are passed as the input to the program. The program must print the number of tiles used to cover the floor as the output.
+Note: All the tiles are of the same size. The length and breadth of the playground are divisible by Y.
+Boundary Condition(s):
+1 <= X <= 10^8
+1 <= Y <= 10^4
+Input Format:
+The first line contains two integers X and Y separated by a space.
+Output Format:
+The first line contains the number of tiles used to cover the floor.
+Example Input/Output 1:
+Input:
+24 2
+Output:
+6
+Explanation:
+The side of each square tile is 2. So the area of a tile is 4.
+The area of the rectangular playground is 24.
+The number of tiles used to cover the floor 24/4 = 6.
+Example Input/Output 2:
+Input:
+3200 20
+Output:
+8
+
+
+
+m,n=map(int,input().split())
+print((m)//n**2)
