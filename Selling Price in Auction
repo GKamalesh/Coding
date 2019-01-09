@@ -1,0 +1,35 @@
+Selling Price in Auction
+An antique item is to be sold in an auction. The starting price of the item is S. The price is increased by I in each bid. The number of bids
+to be placed is limited to N. The seller expects an amount of at least E. The program must accept 4 integers S, I, N and E as the input. The
+program must print yes if the item can be sold for the amount greater than or equal to the expected price E. Else the program must print
+no as the output.
+Boundary Condition(s):
+1 <= S, E <= 1000000
+1 <= N, I <= 10000
+Input Format:
+The first line contains the values of S, I, N and E separated by a space.
+Output Format:
+The first line contains either yes or no.
+Example Input/Output 1:
+Input:
+100 5 10 150
+Output:
+yes
+Explanation:
+The starting price is 100.
+The maximum number of bids to be placed is 10.
+So the maximum selling price is 100+(10x5) = 150.
+Hence the output is yes.
+Example Input/Output 2:
+Input:
+200 5 50 500
+Output:
+no
+
+
+
+a,b,c,d=map(int,input().split())
+if b*c+a>=d:
+    print("yes")
+else:
+    print("no")
