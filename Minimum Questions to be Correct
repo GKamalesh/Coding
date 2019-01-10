@@ -1,0 +1,35 @@
+Minimum Questions to be Correct
+In an exam, there are N multiple choice questions. Each question carries 1 mark if it is answered correctly and If it is answered wrong then it
+results in 1 negative mark. All the questions must be attempted. The program must accept two integers representing the number of questions
+N and pass mark P as the input. The program must print the minimum number of questions needed to be correct to pass the exam.
+Boundary Condition(s):
+1 <= N, P <= 1000
+Input Format:
+The first line contains N and P separated by a space.
+Output Format:
+The first line contains the minimum number of questions needed to be correct to pass the exam.
+Example Input/Output 1:
+Input:
+20 10
+Output:
+15
+Explanation:
+There are 20 questions to be answered and so the total mark is 20.
+If 15 questions are answered correctly the mark obtained is 15.
+The remaining 5 questions carries 5 negative marks.
+So the final mark is 15-5=10.
+Hence 15 is printed.
+Example Input/Output 2:
+Input:
+30 12
+Output:
+21
+
+
+
+
+m,n=map(int,input().split())
+for i in range(m):
+    if m-i-i==n or m-i-i==n-1:
+        print(n+i)
+        break
