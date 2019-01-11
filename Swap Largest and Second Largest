@@ -1,0 +1,63 @@
+Swap Largest and Second Largest
+The program must accept three unique integers X, Y and Z as the input to the program. The program must swap the largest and second largest
+integers and then the program must print three integers as the output.
+Boundary Condition(s):
+1 <= X, Y, Z <= 10^7
+Input Format:
+The first line contains three integers X, Y and Z separated by space.
+Output Format:
+The first line contains three integers separated by space.
+Example Input/Output 1:
+Input:
+23 14 56
+Output:
+56 14 23
+Example Input/Output 2:
+Input:
+89 90 10
+Output:
+90 89 10
+
+
+
+a=list(map(int,input().split()))
+b=a[:]
+m=max(b)
+b.remove(m)
+n=max(b)
+for i in a:
+    if i==m:
+        print(n)
+    elif i==n:
+        print(m)
+    else:
+        print(i)
+        
+        
+  
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+    int a,b,c,t;
+    scanf("%d %d %d",&a,&b,&c);
+    if((a>b && b>c) || (b>a && a>c))
+    {
+        t=a;
+        a=b;
+        b=t;
+    }
+    else if((b>c && c>a) || (c>b && b>a))
+    {
+        t=b;
+        b=c;
+        c=t;
+    }
+    else if((a>c && c>b) || (c>a && a>b))
+    {
+        t=c;
+        c=a;
+        a=t;
+    }
+    printf("%d %d %d",a,b,c);
+}
