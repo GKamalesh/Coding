@@ -1,0 +1,48 @@
+Reverse Last X Characters
+The program must accept a string value S and an integer X as the input. The program must reverse the last X characters in S. Then the program
+must print the modified string as the output.
+Boundary Condition(s):  
+1 <= Length of S <= 100
+1 <= X <= Length of S
+Input Format:
+The first line contains the values of string S.
+The second line contains the integer X.
+Output Format:
+The first line contains the modified string.
+Example Input/Output 1:
+Input:
+skillrack
+3
+Output:
+skillrkca
+Explanation:
+The last 3 characters in the string "skillrack" are a, c and k. After reversing the last three characters, the string becomes "skillrkca".
+Hence the output is skillrkca
+Example Input/Output 2:
+Input:
+program
+7
+Output:
+margorp
+
+
+
+s=input().strip()
+x=int(input())
+print(s[:-x]+s[-x:][::-1])
+
+
+
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    int x,i,n;
+    char s[1000];
+    scanf("%s %d",s,&x);
+    n=strlen(s);
+    for(i=0;i<n-x;i++)
+    printf("%c",s[i]);
+    for(i=n-1;i>=n-x;i--)
+    printf("%c",s[i]);
+}
