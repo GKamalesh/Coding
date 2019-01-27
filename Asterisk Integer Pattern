@@ -1,0 +1,50 @@
+Asterisk Integer Pattern
+
+The program must accept an integer N as the input. The program must print the desired pattern as shown in the Example Input/Output section.
+
+Boundary Condition(s):
+1 <= N <= 10^9
+
+Input Format:
+The first line contains the value of N.
+
+Output Format:
+The list of lines containing the desired pattern as shown in the Example Input/Output section.
+
+Example Input/Output 1:
+Input: 
+234567
+
+Output:
+234567
+*23456
+**2345
+***234
+****23
+*****2
+
+Example Input/Output 2:
+Input:
+98765432
+
+Output:
+98765432
+*9876543
+**987654
+***98765
+****9876
+*****987
+******98
+******9
+
+
+
+
+a=input().strip()
+b=''
+t=0
+s=len(a)
+for i in a:
+    b+='*'
+    print(b[:t]+a[:s-t])
+    t+=1
