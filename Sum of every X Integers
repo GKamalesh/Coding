@@ -1,0 +1,52 @@
+Sum of every X Integers
+
+The program must accept N integers and an integer X (where X is the factor of N) as the input. The program must print the sum of every X integers among N integers as the output.
+
+Boundary Condition(s):
+1 <= N <= 1000
+1 <= Each integer value <= 1000
+1 <= X <= N
+
+Input Format:
+The first line contains the integer N.
+The second line contains N integers separated by space(s).
+The third line contains the integer X.
+
+Output Format:
+The first line contains the sum of every X integers among N integers separated by a space.
+
+Example Input/Output 1:
+Input:
+8
+2 3 4 9 8 7 1 5
+4
+
+Output:
+18 21
+
+Explanation:
+The first 4 integers are 2, 3, 4 and 9. So their sum is 18.
+The next 4 integers are 8, 7, 1 and 5. So their sum is 21.
+Hence the output is 18 21
+
+Example Input/Output 2:
+Input:
+9
+21 7 46 37 5 73 6 8 9
+1
+
+Output
+21 7 46 37 5 73 6 8 9
+
+
+
+
+
+n,s=int(input()),0
+a=list(map(int,input().split()))
+x=int(input())
+t=x
+while t<=len(a):
+    print(sum(a[s:t]))
+    s=t
+    t+=x
