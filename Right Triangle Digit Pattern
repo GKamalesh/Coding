@@ -1,0 +1,45 @@
+Right Triangle Digit Pattern
+
+The program must accept an integer N as the input. The program must print the desired pattern as shown in the Example Input/Output section.
+
+Boundary Condition(s):
+1 <= N <= 10^15
+
+Input Format:
+The first line contains the integer N.
+
+Output Format:
+The list of lines containing the desired pattern as shown in the Example Input/Output section.
+
+Example Input/Output 1:
+Input:
+12345
+
+Output:
+5
+4 3
+2 1 *
+
+Example Input/Output 2:
+Input:
+100000
+
+Output:
+0
+0 0
+0 0 1
+
+
+
+a=input().strip()
+t,j=1,0
+for i in a[::-1]:
+    if j==t:
+        j=0
+        t+=1
+        print()
+    print(i,end=" ")
+    j+=1
+while j!=t:
+    print("*",end=" ")
+    j+=1
