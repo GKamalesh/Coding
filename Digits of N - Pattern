@@ -1,0 +1,41 @@
+Digits of N - Pattern
+
+The program must accept an integer N the input. The program must print the desired pattern as shown in the Example Input/Output section.
+
+Boundary Condition(s):
+1 <= N <= 10^15
+
+Input Format:
+The first line contains the value of N.
+
+Output Format:
+The list of lines containing the desired pattern as shown in the Example Input/Output section.
+
+Example Input/Output 1:
+Input:
+725181
+
+Output:
+7777777
+22
+55555
+1
+88888888
+1
+
+Example Input/Output 2:
+Input:
+502
+
+Output:
+55555
+22
+
+
+
+
+n=input().strip()
+for i in n:
+    for j in range(int(i)):
+        print(i,end="")
+    print()
