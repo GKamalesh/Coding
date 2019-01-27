@@ -1,0 +1,42 @@
+Maximum Product
+
+The program must accept N integers as the input. The program must print the product P of any two integers among N integers so that the value of the product is maximum.
+
+Boundary Condition(s):
+2 <= N <= 10^5
+1 <= Each integer value <= 10^8
+
+Input Format:
+The first line contains the integer N.
+The second line contains N integers separated by space(s).
+
+Output Format:
+The first line contains the value of P.
+
+Example Input/Output 1:
+Input:
+5
+10 5 1 7 2
+
+Output:
+70
+
+Explanation:
+The value of the maximum product is 70 (10 * 7).
+Hence the output is 70
+
+Example Input/Output 2:
+Input:
+4
+4 2 4 9
+
+Output:
+36
+
+
+n=int(input())
+a=list(map(int,input().split()))
+s=max(a)
+a.pop(a.index(s))
+t=max(a)
+print(s*t)
