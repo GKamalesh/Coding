@@ -1,0 +1,47 @@
+Half Palindrome
+
+The program must accept a string S as the input. Either the first half of the string or the second half of the string is always a palindrome. The program must find and print the half of the string which forms a palindrome as the output.
+Note: If the length of the string is odd then consider the middle character to be part of both halves.
+
+Boundary Condition(s):
+1 <= Length of the string <= 1000
+
+Input Format:
+The first line contains the string S.
+
+Output Format:
+The first line contains either the first or second half of the string S.
+
+Example Input/Output 1:
+Input:
+yumertreert
+
+Output:
+treert
+
+Explanation:
+The second half of the string treert is a palindrome so it is printed.
+
+Example Input/Output 2:
+Input:
+madamello
+
+Output:
+madam
+
+
+
+
+n=input().strip()
+t=len(n)//2
+if len(n)%2==1:
+    t+=1
+a=n[:t]
+if len(n)%2==1:
+    b=n[t-1:]
+else:
+    b=n[t:]
+if a==a[::-1]:
+    print(a)
+else:
+    print(b)
