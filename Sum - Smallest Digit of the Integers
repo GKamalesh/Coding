@@ -1,0 +1,43 @@
+Sum - Smallest Digit of the Integers
+
+The program must accept N integers as the input. The program must print the sum of the smallest digit in each integer among N integers as the output.
+
+Boundary Condition(s):
+1 <= N <= 100
+1 <= Each Integer Value <= 10^15
+
+Input Format:
+The first line contains the integer N.
+The second line contains N integers separated by space(s).
+
+Output Format:
+The first line contains the sum of the smallest digit in each integer among N integers.
+
+Example Input/Output 1:
+Input:
+6
+98 765 296 43 1 2673
+
+Output:
+21
+
+Explanation:
+The smallest digit in the numbers 98, 765, 296, 43, 1 and 2673 are 8, 5, 2, 3, 1 and 2 respectively.
+So their sum is 21 (8 + 5 + 2 + 3 + 1 + 2).
+Hence the output is 21
+
+Example Input/Output 2:
+Input:
+4
+6097 9674 2313 4407
+
+Output:
+5
+
+
+
+n,s=int(input()),0
+a=list(map(str,input().split()))
+for i in a:
+    s+=int(min(i))
+print(s)
