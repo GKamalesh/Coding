@@ -37,3 +37,51 @@ if x==a.count(x):
     print('YES')
 else:
     print('NO')
+
+
+
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+    int n,x,i,a[10000],s=0;
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    scanf("%d",&a[i]);
+    scanf("%d",&x);
+    for(i=0;i<n;i++)
+    {
+        if(a[i]==x)
+        s++;
+    }
+    if(s==x)
+    printf("YES");
+    else
+    printf("NO");
+}
+
+
+
+import java.util.*;
+public class Hello
+{
+    public static void main(String[] args)
+    {
+        Scanner s=new Scanner(System.in);
+        int n,i,c=0,x;
+        int a[]=new int[1000];
+        n=s.nextInt();
+        for(i=0;i<n;i++)
+        a[i]=s.nextInt();
+        x=s.nextInt();
+        for(i=0;i<n;i++)
+        {
+            if(a[i]==x)
+            c++;
+        }
+        if(c==x)
+        System.out.print("YES");
+        else
+        System.out.print("NO");
+	}
+}
