@@ -64,3 +64,16 @@ int main()
     printf("%c",a[i]);
     return 0;
 }
+
+
+
+s=input().strip()
+n=len(s)
+b=[]
+for i in range(n):
+    if s[i] is '_':
+        b.append(i);
+print(s[:b[0]],end="")
+for i in range(len(b)-1):
+    print(s[b[i]+1:b[i+1]+1][::-1],end="")
+print(s[b[-1]:])
