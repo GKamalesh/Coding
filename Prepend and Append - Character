@@ -1,0 +1,61 @@
+Prepend and Append - Character
+The program must accept a string S and a character CH as the input. The program must
+prepend CH to the string S if the rst character is not equal to CH. Then the program must
+append CH to the string S if the last character is not equal to CH. Finally, the program must print
+the modied string as the output.
+Note: The string S always contains lower case alphabets.
+Boundary Condition(s):
+1 <= Length of S <= 100
+Input Format:
+The rst line contains the string S.
+The second line contains the character CH.
+Output Format:
+The rst line contains the modied string.
+Example Input/Output 1:
+Input:
+park
+s
+Output:
+sparks
+Explanation:
+Prepend 's' to the string "park" -> "spark"
+Append 's' to the string "spark" -> "sparks"
+Hence the output is sparks
+Example Input/Output 2:
+Input:
+jungle
+j
+Output:
+junglej
+
+
+n=input().strip()
+c=input()
+if n[0]!=c and n[-1]!=c:
+    print(c+n+c)
+elif n[0]!=c:
+    print(c+n)
+elif n[-1]!=c:
+    print(n+c)
+else:
+    print(n)
+
+
+
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+    char a[1000],c;
+    int n,i;
+    scanf("%s\n%c",a,&c);
+    n=strlen(a)-1;
+    if(a[0]!=c && a[n]!=c)
+    printf("%c%s%c",c,a,c);
+    else if(a[0]!=c)
+    printf("%c%s",c,a);
+    else if(a[n]!=c)
+    printf("%s%c",a,c);
+    else
+    printf("%s",a);
+}
