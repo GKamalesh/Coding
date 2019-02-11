@@ -1,0 +1,58 @@
+Consonants from Start End Alternate
+A string S is passed as the input to the program.
+The program must print the consonants from the start position and the consonants from the end position alternatively. 
+No character at the same position in the string must be printed twice.
+
+Boundary Condition(s):
+1 <= Length of String S <= 1000
+
+Input Format:
+The first line contains the value of S
+
+Output Format:
+The first line contains the consonants in S printed based on the above conditions.
+
+Example Input/Output 1:
+Input:
+machine
+
+Output:
+mnch
+
+Example Input/Output 2:
+Input:
+environment
+
+Output:
+ntvnrmn
+
+
+
+
+s=list(input())
+n=len(s)
+for i in s:
+    if i in "AEIOUaeiou":
+        while s.count(i):
+            s.remove(i)
+            n-=1
+for i in range(n//2):
+    if s[i] not in 'AEIOUaeiou':
+        print(s[i],end='')
+    if s[n-i-1] not in 'aeiouAEIOU':
+        print(s[n-i-1],end='')
+if n%2==1 and s[n//2] not in 'aeiouAEIOU':
+    print(s[n//2])
+
+
+
+a=list(input())
+for i in 'AEIOUaeiou': 
+    if i in a: 
+        while a.count(i):
+            a.remove(i) 
+l=len(a)
+for i in range(l//2):
+    print(a[i],end=a[l-i-1])
+if l%2==1:
+    print(a[l//2])
