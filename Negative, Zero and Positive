@@ -39,3 +39,19 @@ for i in a[::-1]:
     else:
         c+=str(i)=' '
 print(b,c)
+
+
+
+n=int(input())
+a=list(map(int,input().split()))
+b=[]
+c=[]
+for i in a[::-1]:
+    if i<0:
+        print(i,end=' ')
+    elif i==0:
+        b.append(i)
+    else:
+        c.append(i)
+d=b+c
+print(*d,sep=' ')
