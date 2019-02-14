@@ -1,0 +1,51 @@
+String with more Consonants
+The program must accept two string values S1 and S2 as the input. The program must print the
+string having the most number of consonants. If both the string values have the same number
+of consonants then the program must print the string having the larger length as the output.
+Note: The input string values will not have the same number of consonants with the same
+length.
+Boundary Condition(s):
+1 <= Length of S1, S2 <= 100
+Input Format:
+The rst line contains the string S1.
+The second line contains the string S2.
+Output Format:
+The rst line contains either the string S1 or S2 based on the conditions mentioned above.
+Example Input/Output 1:
+Input:
+rst
+cry
+Output:
+rst
+Explanation:
+The string "first" has 4 consonants.
+The string "cry" has 3 consonants.
+So 4 is greater than 3.
+Hence the output is rst
+Example Input/Output 2:
+Input:
+about
+hello
+Output:
+hello
+
+
+a=input().strip()
+b=input().strip()
+c=0
+s=0
+for i in a:
+    if i not in 'aeiouAEIOU':
+        c+=1
+for i in b:
+    if i not in 'aeiouAEIOU':
+        s+=1
+if c>s:
+    print(a)
+elif s>c:
+    print(b)
+else:
+    if(len(a)>len(b)):
+        print(a)
+    else:
+        print(b)
