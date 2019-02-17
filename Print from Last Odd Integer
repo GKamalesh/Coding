@@ -1,0 +1,55 @@
+Print from Last Odd Integer
+The program must accept N integers as the input. The program must print the integers in
+reverse order starting from the last occurring odd integer to the rst integer as the output.
+Note: There will be at least one odd integer.
+Boundary Condition(s):
+1 <= N <= 1000
+Input Format:
+The rst line contains the value of N.
+The second line contains N integers separated by space(s).
+Output Format:
+The rst line contains the integers separated by a space.
+Example Input/Output 1:
+Input:
+7
+2 4 1 5 7 8 10
+Output:
+7 5 1 4 2
+Explanation:
+The last occurring odd integer among N integers is 7.
+So all the integers from 7 to the rst integer are printed in reverse order as the output.
+Example Input/Output 2:
+Input:
+8
+51 401 925 207 827 164 976 118
+Output:
+827 207 925 401 51
+
+
+
+n,t=int(input()),0
+a=list(map(int,input().split()))
+for i in a[::-1]:
+    if i%2==1:
+        t=1
+    if t==1:
+        print(i)
+
+
+
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+    int n,i,a[1000],t=0;
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    scanf("%d",&a[i]);
+    for(i=n-1;i>=0;i--)
+    {
+        if(a[i]%2==1)
+        t=1;
+        if(t==1)
+        printf("%d ",a[i]);
+    }
+}
