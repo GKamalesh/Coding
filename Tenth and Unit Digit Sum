@@ -1,0 +1,52 @@
+Tenth and Unit Digit Sum
+The program must accept N two-digit integers as the input. The program must print the sum of
+tenth digits of the N integers followed by the sum of unit digits of the N integers as the output.
+Boundary Condition(s):
+1 <= N <= 1000
+Input Format:
+The rst line contains N.
+The second line contains N integers separated by a space.
+Output Format:
+The rst line contains two integers separated by a space.
+Example Input/Output 1:
+Input:
+5
+23 45 19 65 34
+Output:
+16 26
+Explanation:
+The tenth digits are 2, 4, 1, 6 and 3. Their sum is 16.
+The unit digits are 3, 5, 9, 5 and 4. Their sum is 26.
+Example Input/Output 2:
+Input:
+8
+75 62 90 24 90 33 92 96
+Output:
+54 22
+
+
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+    int n,i,s=0,c=0,t;
+    scanf("%d",&n);  
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&t); 
+        s+=t%10;    
+        t/=10; 
+        c+=t%10;
+    }
+    printf("%d %d",c,s);
+    return 0;
+}
+
+
+n,s,c=int(input()),0,0
+a=list(map(int,input().split()))
+for i in a:
+    s+=i%10
+    t=i//10
+    c+=t%10
+print(c,s)
