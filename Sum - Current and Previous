@@ -1,0 +1,43 @@
+Sum - Current and Previous
+The program must accept N integers as the input. For each integer among the N integers, the
+program must increment the integer by the previous value in the original input sequence. Since
+there is no integer present before the rst integer, it must be incremented by the integer value
+present in the last position. Then the program must print the modied values as the output.
+Boundary Condition(s):
+2 <= N <= 100
+0 <= Each integer value <= 10^7
+Input Format:
+The rst line contains the value of N.
+The second line contains N integers separated by space(s).
+Output Format:
+The rst line contains the modied values separated by a space.
+Example Input/Output 1:
+Input:
+5
+6 5 3 2 8
+Output:
+14 11 8 5 10
+Explanation:
+The sum of the rst integer and the last integer (6+8) is 14.
+The sum of the second integer and the rst integer (5+6) is 11.
+The sum of the third integer and the second integer (3+5) is 8.
+The sum of the fourth integer and the third integer (2+3) is 5.
+The sum of the fth integer and the fourth integer (8+2) is 10.
+Hence the output is 14 11 8 5 10
+Example Input/Output 2:
+Input:
+7
+12 23 34 45 56 67 89
+Output:
+101 35 57 79 101 123 156
+
+
+
+n,t=int(input()),-1
+a=list(map(int,input().split()))
+for i in a:
+    if t<0:
+        print(i+a[-1])
+    else:
+        print(i+a[t])
+    t+=1
