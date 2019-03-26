@@ -1,0 +1,85 @@
+Ramesh is a station master who likes to manage his station as best as he can. To do so, he wants to utilize minimum number of platforms for the operations. Given that he has details for all the n train arrivals and departures, how can he acheive the target of minimum number of platforms needed?
+
+For t runs.
+
+Assume that, all trains arrive and depart on the same day.
+
+Input Format
+
+t
+
+n1
+
+A1 D1
+
+A2 D2
+
+A3 D3
+
+....
+
+An Dn
+
+n2
+
+A1 D1
+
+A2 D2
+
+...
+
+An Dn
+
+....
+
+nt
+
+A1 D1
+
+A2 D2
+
+...
+
+An Dn
+
+Constraints
+
+1 <= t <= 100
+
+1 <= n <= 100000
+
+Ai <= Di
+
+0000 <= Ai, Di <= 2359
+
+Output Format
+
+result_1
+
+result_2
+
+...
+
+result_t
+
+Sample Input 0
+
+1
+
+5
+
+1030 1045
+1035 1040
+1045 1050
+1020 1025
+1222 1325
+Sample Output 0
+
+2
+Explanation 0
+
+Train 1 has arrived at 10:30 and departs at 10:45.
+Train 2 arriving at 10:35 cannot use that platform, hence it needs to use a separate platform.
+Train 3 arriving at 10:45 can use either of the platforms of the previous trains.
+Train 4 arriving at 10:20 could use one platform, where Train 1 arriving later could have used another at that time.
+Train 5 arriving at 12:22 doesn't affect any other trains so it need to have only that platform.
