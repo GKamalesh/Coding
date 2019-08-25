@@ -1,0 +1,70 @@
+Split into Two Lines - String
+The program must accept a string S and print the string value in two lines in zig zag pattern as shown in the
+Example Input/Output section.
+Boundary Condition(s):
+2 <= Length of S <= 100
+Input Format:
+The rst line contains the string S.
+Output Format:
+The rst two lines contain the desired pattern as shown in the Example Input/Output section.
+Example Input/Output 1:
+Input:
+abcdefg
+Output:
+a*c*e*g
+*b*d*f*
+Example Input/Output 2:
+Input:
+blockchain
+Output:
+b*o*k*h*i*
+*l*c*c*a*n
+Max Execution Time Limit: 1000 millisecs
+
+
+
+
+
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+    char a[100];
+    int i;
+    scanf("%s",a);
+    for(i=0;i<strlen(a);i++)
+    {
+        if(i%2)
+        printf("*");
+        else
+        {
+            printf("%c",a[i]);
+            a[i]='*';
+        }
+    }
+    printf("\n%s",a);
+}
+
+
+
+import java.util.*;
+public class Hello 
+{
+    public static void main(String[] args)
+    {
+        Scanner s=new Scanner(System.in);
+        String a=s.nextLine();
+        int i;
+        for(i=0;i<a.length();i++)
+        {
+            if(i%2==0)
+            {
+            System.out.print(a.charAt(i));
+            a=a.substring(0,i)+"*"+a.substring(i+1,a.length());
+            }
+            else
+            System.out.print('*');
+        }
+        System.out.println("\n"+a);
+	}
+}
