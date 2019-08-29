@@ -1,0 +1,61 @@
+Matrix Find String Column-wise
+The program must accept a character matrix of size NxN and a string S as the input. The program must
+check if the string S is present in the matrix column-wise and print the column number of the columns with
+the given string in it. Else if the string S is not present in any column of the matrix then the program must
+print -1 as the output.
+Note: The character matrix and the string S contain only lower case alphabets.
+Boundary Condition(s):
+1 <= N <= 100
+1 <= Length of S <= 100
+Input Format:
+The rst line contains the value N.
+The next N lines contain N characters each separated by a space.
+The (N+2) line contains the string S.
+Output Format:
+The rst line contains either -1 or the column number values with the given string each separated by a space.
+Example Input/Output 1:
+Input:
+5
+n q w f r
+e r n u o
+p o b r c
+r c g t k
+j k j k n
+rock
+Output:
+2 5
+Explanation:
+The string rock is present in the 2 and 5 column which are highlighted below.
+n q w f r
+e r n u o
+p o b r c
+r c g t k
+j k j k n
+Example Input/Output 2:
+Input:
+3
+o v r
+k b m
+a k t
+to
+
+Output:
+-1
+Max Execution Time Limit: 2000 millisecs
+
+
+
+
+n=int(input())
+l,f=[],1
+for i in range(n):
+    l.append(list(map(str,input().split())))
+a=input()
+for i in range(n):
+    s=''
+    for j in range(n):
+        s+=l[j][i]
+    if a in s:
+        print(i+1)
+        f=0
+print(f*'-1')
