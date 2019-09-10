@@ -1,0 +1,28 @@
+Unit Digit - Replace by 0
+The program must accept an integer N as the input. The program must replace all the occurrences of the
+unit digit of N by 0 in the integer N. Finally, the program must print the modied value of N as the output.
+Boundary Condition(s):
+1 <= N <= 10^8
+Input Format:
+The rst line contains the value of N.
+Output Format:
+The rst line contains the modied value of N.
+Example Input/Output 1:
+Input:
+1021
+Ouput:
+20
+Explanation:
+The unit digit of 1021 is 1.
+So after replacing all the occurrence of 1 by 0, the integer becomes 0020.
+Hence the output is 20
+Example Input/Output 2:
+Input:
+202202
+Ouput:
+0
+
+
+
+a=input().strip()
+print(int(a.replace(a[-1],'0',a.count(a[-1]))))
