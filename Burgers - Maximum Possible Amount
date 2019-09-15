@@ -1,0 +1,71 @@
+Burgers - Maximum Possible Amount
+In a restaurant, two types of burgers are available (Veg burgers and Chicken burgers). To assemble a veg
+burger, 2 buns and a veg cutlet are required. To assemble a chicken burger, 2 buns and a chicken cutlet are
+required. There are B buns, V veg cutlets and C chicken cutlets are available to assemble the burgers. The
+cost of one veg burger is Rs. X and the cost of one chicken burger is Rs. Y. The values of B, V, C, X and Y are
+passed as the input to the program. The program must print the maximum possible amount obtained by
+selling the burgers as the output.
+Boundary Condition(s):
+2 <= B, V, C <= 10^6
+1 <= X, Y <= 10^3
+Input Format:
+The rst line contains B, V, C separated by a space.
+The second line contains X, Y separated by a space.
+Output Format:
+The rst line contains the maximum possible amount.
+Example Input/Output 1:
+Input:
+12 6 4
+25 30
+Output:
+170
+Explanation:
+4 chicken burgers = 4 * 30 = 120.
+2 veg burgers = 2 * 25 = 50.
+So the total amount is 120 + 50 = 170.
+Example Input/Output 2:
+Input:
+9 2 4
+100 25
+Output:
+250
+Explanation:
+2 chicken burgers = 2 * 25 = 50.
+2 veg burgers = 2 * 100 = 200.
+So the total amount is 50 + 200 = 250.
+
+
+
+
+#include <iostream>
+using namespace std;
+int main(int argc, char** argv)
+{
+    int b,v,c,x,y,t,s,m,n,a=0;
+    cin>>b>>v>>c;
+    cin>>x>>y;
+    t=v;
+    s=x;
+    m=c;
+    n=y;
+    if(s<y)
+    {
+        t=c;
+        s=y;
+        m=v;
+        n=x;
+    }
+    while(b>1 && t>0)
+    {
+        a+=s;
+        t--;
+        b-=2;
+    }
+    while(b>1 && m>0)
+    {
+        a+=n;
+        b-=2;
+        m--;
+    }
+    cout<<a;
+}
